@@ -3,12 +3,17 @@
  "version": "0.0.1",
  "private": true,
  "dependencies": {
-   "gulp" : "3.8.9",
-   "gulp-imagemin",
-   "gulp-minify-html",
-   "gulp-ruby-sass",
-   "gulp-csso",
-   "browser-sync",
-   "gulp-uglify"
- }
+   "gulp" : "~3.8.9",
+   "gulp-imagemin" : "~0.1.0",
+   "gulp-minify-html" : "~0.1.0",
+   "gulp-ruby-sass" : "~0.1.0",
+   "gulp-csso" :"~0.1.0",
+   "browser-sync" :"~0.1.0",
+   "gulp-uglify" :"~0.1.0",
+    "http-server": "^0.6.1"
+   },
+   "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8000"
+   }
 }
