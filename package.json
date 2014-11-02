@@ -1,0 +1,14 @@
+{
+ "name": "TheEra-for-NewThoughts",
+ "version": "0.0.1",
+ "private": true,
+ "dependencies": {
+   "gulp" : "3.8.9",
+   "gulp-imagemin",
+   "gulp-minify-html",
+   "gulp-ruby-sass",
+   "gulp-csso",
+   "browser-sync",
+   "gulp-uglify"
+ }
+}
