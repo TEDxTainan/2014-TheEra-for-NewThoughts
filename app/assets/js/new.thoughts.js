@@ -2,7 +2,9 @@ $(document).ready(function() {
   $('#fullpage').fullpage({
     'verticalCentered': false,
   'css3': true,
-  'sectionsColor': ['#F0F2F4', '#fff', '#fff', '#fff'],
+	 menu: '#menu',
+	 anchors: ['firstPage', 'secondPage', '3rdPage'],
+  'sectionsColor': ['#fff', '#fff', '#fff', '#fff'],
   'navigation': true,
   'navigationPosition': 'right',
   'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],

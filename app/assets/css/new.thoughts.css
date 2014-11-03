@@ -1,0 +1,23 @@
+.menu-icon, #menu{
+    position: fixed;
+    left: 1%;
+    z-index: 99;
+}
+.share, #share_menu{
+    position: fixed;
+    float: right;
+    right: 2.5%;
+    width: 20px;
+    z-index: 99;
+}
+
+li{
+    list-style: none;
+}
+
+
+#section1{
+    background-image: url("../img/2014_banner.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
