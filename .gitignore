@@ -2,3 +2,6 @@ vendors/examples
 node_modules/*
 npm-debug.log
 dist/*
+logs/*
+.DS_Store
+tmp
