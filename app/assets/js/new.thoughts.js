@@ -3,7 +3,7 @@ $(document).ready(function() {
     'verticalCentered': false,
   'css3': true,
 	 menu: '#menu',
-	 anchors: ['firstPage', 'secondPage', '3rdPage'],
+	 anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage'],
   'sectionsColor': ['#fff', '#fff', '#fff', '#fff'],
   'navigation': true,
   'navigationPosition': 'right',

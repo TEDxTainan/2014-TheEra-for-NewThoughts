@@ -48,4 +48,8 @@
     };
   });
 
+  app.controller('SpeakerController', function(){
+  
+  });
+
 }) ();

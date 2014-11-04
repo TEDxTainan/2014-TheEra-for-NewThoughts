@@ -5,7 +5,7 @@ module.exports = function(config){
 
     files : [
       'app/assets/js/*.js',
-      'app/vendors/js/*.js'
+      'app/*.js',
     ],
 
     autoWatch : true,
