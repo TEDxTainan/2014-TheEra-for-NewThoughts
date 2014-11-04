@@ -2,9 +2,9 @@ $(document).ready(function() {
   $('#fullpage').fullpage({
    'css3': true,
    'sectionsColor': ['#fff', '#fff', '#fff', '#fff'],
-		anchors: ['home', 'section1', 'section2', 'section3', 'join'],
+		anchors: ['home', 'section1', 'section2', 'section3', 'participate'],
 		menu: '#menu',
-		'navigation': true,
+		'navigation': false,
 		'navigationPosition': 'right'
 
   });

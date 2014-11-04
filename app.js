@@ -1,5 +1,14 @@
 (function() {
-  var app = angular.module('event', [ ]);
+  var app = angular.module('event', ['djds4rce.angular-socialshare']);
+
+  app.config(function($locationProvider){
+        $locationProvider.html5Mode(true).hashPrefix('!');
+  });
+
+  app.run(function($FB){
+    $FB.init('164546407087109');
+  });
+
   
   app.controller('MenuController', ['$location', '$anchorScroll', function($location, $anchorScroll){
     this.images = [
@@ -36,8 +45,6 @@
     };
 
     this.isAnchor = function(x) {
-      console.log(x);
-      console.log(this.anchor);
       return this.anchor === x;
     }
   }]);
@@ -49,18 +56,16 @@
                 png: 'assets/img/unclickbutton.png'
               },
               {
-                svg: 'assets/img/facebook.svg', 
-                png: 'assets/img/facebook.png'
+                svg: 'assets/img/clickbutton.svg', 
+                png: 'assets/img/clickbutton.png'
               }];
     this.image = this.images[0]
 
-    this.setImg = function(i){
-      this.image = this.images[i];
-    };
+    this.isOpen = false;
 
-    this.isSelect = function(i){
-      return this.image === this.images[i];
-    };
+    this.toggle = function(){
+      this.isOpen = this.isOpen? false : true;
+    }
 
   });
 
@@ -68,9 +73,6 @@
   app.controller('SpeakerController', function(){
   
   });
-
-
-
 
 
 }) ();
