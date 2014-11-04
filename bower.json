@@ -1,0 +1,10 @@
+{
+  "name": "TheEra-for-NewThoughts",
+  "description": "TEDxTainan 2014 event",
+  "version": "0.1.0",
+  "homepage": "https://github.com/TEDxTainan/",
+  "private": true,
+  "dependencies": {
+     "angular-socialshare": "~0.0.6" 
+  }
+}
