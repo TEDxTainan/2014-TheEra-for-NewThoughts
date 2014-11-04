@@ -6,9 +6,16 @@ var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
+var optipng = require('imagemin-optipng');
 
-gulp.task('default', ['html', 'css', 'js'], function () {
+gulp.task('default', function () {
+    return gulp.src('app/assets/img/background.png')
+        .pipe(optipng({ optimizationLevel: 3 })())
+        .pipe(gulp.dest('dist/images'));
 });
+
+//gulp.task('default', ['html', 'css', 'js'], function () {
+//});
 
 gulp.task('html', function() {
   var opts = {comments:true,spare:true};
