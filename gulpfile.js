@@ -29,12 +29,12 @@ gulp.task('css', function() {
       .pipe(gulp.dest('dist/js'))
  });
 
- gulp.task('scss', function () {
-  return gulp.src('app/assets/scss/*.scss')
-    .pipe(sass({sourcemap: true, sourcemapPath: '../scss'}))
-    .on('error', function (err) { console.log(err.message); })
-    .pipe(gulp.dest('dist/css/'));
- });
+gulp.task('scss', function () {
+    return gulp.src('app/assets/scss/new.thoughts.scss')
+        .pipe(sass({sourcemap: true, sourcemapPath: '../scss'}))
+        .on('error', function (err) { console.log(err.message); })
+        .pipe(gulp.dest('dist/css'));
+});
 
 gulp.task('images', function () {
     return gulp.src('app/assets/img/*')
