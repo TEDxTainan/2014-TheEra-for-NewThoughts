@@ -172,7 +172,6 @@ span.pluginButtonLabel{
     font-size: 46px;
     top: 50px;
     margin: auto;
-    font-family: 'Franklin Gothic';
     color: #666666;
 }
 .time{
@@ -182,7 +181,6 @@ span.pluginButtonLabel{
     right: -10%;
     margin: auto;
     color: #F05F6D;
-    font-family: 'Franklin Gothic';
     font-weight: 700;
     #day, #hour, #min, #sec{
         letter-spacing: 0em;
@@ -213,15 +211,16 @@ span.pluginButtonLabel{
        font-size: 16px;
        top: 69px;
        left: 13%;
+       width: 372px;
     }
     .time {
-       right: -9%;
+       right: -8%;
        font-size: 14px;
     }
     #section1 .content{ 
-        left: -109px;
         min-width: 490px;
         margin: auto;
+        left: -147px;
         .logo {
             width: 22%;
             left: 40%;
