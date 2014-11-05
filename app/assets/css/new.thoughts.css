@@ -182,10 +182,11 @@ span.pluginButtonLabel {
     left: 13%; }
 
   .time {
-    right: -7%; }
+    right: -9%;
+    font-size: 14px; }
 
   #section1 .content {
-    left: -70px;
+    left: -109px;
     min-width: 490px;
     margin: auto; }
     #section1 .content .logo {
