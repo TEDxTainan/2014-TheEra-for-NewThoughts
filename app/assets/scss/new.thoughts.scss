@@ -193,21 +193,23 @@ span.pluginButtonLabel{
        left: 19%;
     }
 }
-@media screen and (min-width: 100px) and (max-width: 640px) {
+@media screen and (max-width: 640px) and (min-width: 100px){
     #section1{
         background-position-y: 300px;
     }
     .tedxtainan{
         right: -60%;
-        left: 63%;
         top: 50px;
+        left: 27%;
     }
     .countdown{
        left: 9%;
+       letter-spacing: 0em;
     }
 
     .time {
         right: -9%;
+       letter-spacing: 0em;
     }
 }
 
