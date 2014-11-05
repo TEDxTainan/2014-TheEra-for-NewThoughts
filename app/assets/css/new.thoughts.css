@@ -155,6 +155,13 @@ span.pluginButtonLabel {
 
 @media screen and (max-width: 800px) {
   #section1 {
-    background-position-y: 280px; } }
+    background-position-y: 280px; }
+
+  .tedxtainan {
+    right: -60%;
+    top: 61px; }
+
+  .countdown {
+    left: 19%; } }
 
 /*# sourceMappingURL=new.thoughts.css.map */
