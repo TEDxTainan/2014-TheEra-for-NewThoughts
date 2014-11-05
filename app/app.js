@@ -1,8 +1,9 @@
 (function() {
   var app = angular.module('event', ['ngRoute','djds4rce.angular-socialshare']);
 
-  app.config(function($locationProvider){
+  app.config(function($locationProvider, $rootScopeProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
+        $rootScopeProvider.digestTtl(20);
   });
 
   app.run(function($FB){
@@ -35,7 +36,6 @@
       $scope.image = $scope.images[this.index];
       console.log(this.index);
     };
-
     $scope.isSelect = function(){
       console.log($scope);
       change = ($scope.image === $scope.images[1]) || ($scope.image === $scope.images[2]); 
