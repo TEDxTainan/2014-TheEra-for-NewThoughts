@@ -178,7 +178,7 @@ span.pluginButtonLabel {
   .countdown {
     font-size: 16px;
     top: 69px;
-    left: 13%;
+    left: 0%;
     width: 372px; }
 
   .time {
@@ -188,7 +188,7 @@ span.pluginButtonLabel {
   #section1 .content {
     min-width: 490px;
     margin: auto;
-    left: -147px; }
+    left: -92px; }
     #section1 .content .logo {
       width: 22%;
       left: 40%; }
