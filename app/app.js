@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('event', ['djds4rce.angular-socialshare']);
+  var app = angular.module('event', ['ngRoute','djds4rce.angular-socialshare']);
 
   app.config(function($locationProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
@@ -13,16 +13,16 @@
   app.controller('MenuController', ['$location', '$anchorScroll', function($location, $anchorScroll){
     this.images = [
           {
-            svg: 'assets/img/unfold.svg', 
-            png: 'assets/img/unfold.png'
+            svg: '//www.tedxtainan.com/app/assets/img/unfold.svg', 
+            png: '//www.tedxtainan.com/app/assets/img/unfold.png'
           },
           {
-            svg: 'assets/img/unselect.svg', 
-            png: 'assets/img/unselect.png'
+            svg: '//www.tedxtainan.com/app/assets/img/unselect.svg', 
+            png: '//www.tedxtainan.com/app/assets/img/unselect.png'
           },
           {
-            svg: 'assets/img/select.svg', 
-            png: 'assets/img/select.png'
+            svg: '//www.tedxtainan.com/app/assets/img/select.svg', 
+            png: '//www.tedxtainan.com/app/assets/img/select.png'
           }];
     
     this.index = 0;
@@ -52,12 +52,12 @@
   app.controller('ShareController', function(){
     this.images = [
               {
-                svg: 'assets/img/unclickbutton.svg', 
-                png: 'assets/img/unclickbutton.png'
+                svg: '//www.tedxtainan.com/app/assets/img/unclickbutton.svg', 
+                png: '//www.tedxtainan.com/app/assets/img/unclickbutton.png'
               },
               {
-                svg: 'assets/img/clickbutton.svg', 
-                png: 'assets/img/clickbutton.png'
+                svg: '//www.tedxtainan.com/app/assets/img/clickbutton.svg', 
+                png: '//www.tedxtainan.com/app/assets/img/clickbutton.png'
               }];
     this.image = this.images[0]
 
@@ -70,8 +70,53 @@
   });
 
 
-  app.controller('SpeakerController', function(){
-  
+  app.controller('ThemeController', function(){
+      
+    this.speakers = [{
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
+                    },
+                    {
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
+                    },{
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
+                    },{
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
+                    },{
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
+                    }
+                  ];
+
+
   });
 
 
