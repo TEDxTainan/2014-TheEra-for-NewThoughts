@@ -10,8 +10,8 @@
   });
 
   
-  app.controller('MenuController', ['$location', '$anchorScroll', function($location, $anchorScroll){
-    this.images = [
+  app.controller('MenuController', ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll){
+    $scope.images = [
           {
             svg: '//www.tedxtainan.com/app/assets/img/unfold.svg', 
             png: '//www.tedxtainan.com/app/assets/img/unfold.png'
@@ -25,27 +25,27 @@
             png: '//www.tedxtainan.com/app/assets/img/select.png'
           }];
     
-    this.index = 0;
-    this.anchor = 0;
-    this.image = this.images[0];
+    $scope.index = 0;
+    $scope.anchor = 0;
+    $scope.image = $scope.images[0];
 
-    this.toggleImg = function(){
-      this.index = this.index == 1 ? 0 : 1;
-      this.image = this.images[this.index];
+    $scope.toggleImg = function(){
+      $scope.index = $scope.index == 1 ? 0 : 1;
+      $scope.image = $scope.images[$scope.index];
     };
 
-    this.isSelect = function(){
-      return (this.image === this.images[1]) || (this.image === this.images[2]);
+    $scope.isSelect = function(){
+      return ($scope.image === $scope.images[1]) || ($scope.image === $scope.images[2]);
     };
     
-    this.gotoAnchor = function(x){
-      this.anchor = x;
-      this.image = this.images[2];
+    $scope.gotoAnchor = function(x){
+      $scope.anchor = x;
+      $scope.image = $scope.images[2];
       $.fn.fullpage.moveTo(x);
     };
 
-    this.isAnchor = function(x) {
-      return this.anchor === x;
+    $scope.isAnchor = function(x) {
+      return $scope.anchor === x;
     }
   }]);
 
