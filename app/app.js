@@ -27,6 +27,7 @@
     
     this.index = 0;
     this.anchor = 0;
+    var change = false;
     $scope.image = $scope.images[0];
 
     $scope.toggleImg = function(){
@@ -36,8 +37,9 @@
     };
 
     $scope.isSelect = function(){
-    console.log($scope);
-      return ($scope.image === $scope.images[1]) || ($scope.image === $scope.images[2]);
+      console.log($scope);
+      change = ($scope.image === $scope.images[1]) || ($scope.image === $scope.images[2]); 
+      return change;
     };
     
     $scope.gotoAnchor = function(x){
