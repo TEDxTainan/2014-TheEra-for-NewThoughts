@@ -147,9 +147,17 @@ span.pluginButtonLabel{
     }
 }
 
+.speaker_thumb{
+    float: left;
+    position: relative;
+    top: 230px;
+    left: 50px;
+}
 
 @media screen and (max-width: 800px) {
     #section1{
         background-position-y: 280px;
     }
 }
+
+
