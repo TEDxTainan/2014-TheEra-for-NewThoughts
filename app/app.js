@@ -25,32 +25,34 @@
             png: '//www.tedxtainan.com/app/assets/img/select.png'
           }];
     
-    $scope.index = 0;
-    $scope.anchor = 0;
+    this.index = 0;
+    this.anchor = 0;
     $scope.image = $scope.images[0];
 
     $scope.toggleImg = function(){
-      $scope.index = $scope.index == 1 ? 0 : 1;
-      $scope.image = $scope.images[$scope.index];
+      this.index = this.index == 1 ? 0 : 1;
+      $scope.image = $scope.images[this.index];
+      console.log(this.index);
     };
 
+    console.log($scope);
     $scope.isSelect = function(){
       return ($scope.image === $scope.images[1]) || ($scope.image === $scope.images[2]);
     };
     
     $scope.gotoAnchor = function(x){
-      $scope.anchor = x;
+      this.anchor = x;
       $scope.image = $scope.images[2];
       $.fn.fullpage.moveTo(x);
     };
 
     $scope.isAnchor = function(x) {
-      return $scope.anchor === x;
+      return this.anchor === x;
     }
   }]);
 
-  app.controller('ShareController', function(){
-    this.images = [
+  app.controller('ShareController', ['$scope', function($scope){
+    $scope.images = [
               {
                 svg: '//www.tedxtainan.com/app/assets/img/unclickbutton.svg', 
                 png: '//www.tedxtainan.com/app/assets/img/unclickbutton.png'
@@ -59,20 +61,20 @@
                 svg: '//www.tedxtainan.com/app/assets/img/clickbutton.svg', 
                 png: '//www.tedxtainan.com/app/assets/img/clickbutton.png'
               }];
-    this.image = this.images[0]
+    $scope.image = $scope.images[0]
 
     this.isOpen = false;
 
-    this.toggle = function(){
+    $scope.toggle = function(){
       this.isOpen = this.isOpen? false : true;
     }
 
-  });
+  }]);
 
 
-  app.controller('ThemeController', function(){
+  app.controller('ThemeController', ['$scope', function($scope){
       
-    this.speakers = [{
+    $scope.speakers = [{
                       image: {
                           full: '',
                           thumb: 'assets/img/unknown_speaker.svg'
@@ -117,7 +119,7 @@
                   ];
 
 
-  });
+  }]);
 
 
 }) ();

@@ -28,31 +28,31 @@ Template Name: 2014 The Era for New Thoughts
      <header>
       <div ng-controller="MenuController as menu">
         <div class="menu-icon">
-          <img ng-click="menu.toggleImg()" ng-src="{{menu.image.svg}}" />
+          <img ng-click="toggleImg()" ng-src="{{image.svg}}" />
         </div>
-        <ul id="menu" ng-class="{ active: menu.isSelect() }" ng-show="menu.isSelect()">
-          <li data-menuanchor="firstPage" ng-class="{ active: menu.isAnchor(2)}">
-            <a href="#firstPage" ng-mouseover="menu.gotoAnchor(2)">新思潮 簡介</a>
+        <ul id="menu" ng-class="{ active: isSelect() }" >
+          <li data-menuanchor="firstPage" ng-class="{ active: isAnchor(2)}">
+            <a href="#firstPage" ng-mouseover="gotoAnchor(2)">新思潮 簡介</a>
           </li>
-          <li data-menuanchor="secondPage" ng-class="{ active: menu.isAnchor(3)}">
-            <a href="#secondPage" ng-mouseover="menu.gotoAnchor(3)">新潮湧起 , 創新</a>
+          <li data-menuanchor="secondPage" ng-class="{ active: isAnchor(3)}">
+            <a href="#secondPage" ng-mouseover="gotoAnchor(3)">新潮湧起 , 創新</a>
           </li>
-          <li data-menuanchor="3rdPage" ng-class="{ active: menu.isAnchor(4) }">
-            <a href="#3rdPage" ng-mouseover="menu.gotoAnchor(4)">草根演繹 , 改變</a>
+          <li data-menuanchor="3rdPage" ng-class="{ active: isAnchor(4) }">
+            <a href="#3rdPage" ng-mouseover="gotoAnchor(4)">草根演繹 , 改變</a>
           </li>
-          <li data-menuanchor="4thPage" ng-class="{ active: menu.isAnchor(5) }">
-            <a href="#4thPage" ng-mouseover="menu.gotoAnchor(5)">跨越破碎 , 前行</a>
+          <li data-menuanchor="4thPage" ng-class="{ active: isAnchor(5) }">
+            <a href="#4thPage" ng-mouseover="gotoAnchor(5)">跨越破碎 , 前行</a>
           </li>
-          <li data-menuanchor="lastPage" ng-class="{ active: menu.isAnchor(6) }">
-            <a href="#lastPage" ng-mouseover="menu.gotoAnchor(6)">如何參加新思潮</a>
+          <li data-menuanchor="lastPage" ng-class="{ active: isAnchor(6) }">
+            <a href="#lastPage" ng-mouseover="gotoAnchor(6)">如何參加新思潮</a>
           </li>
         </ul>
         </div>
       <div ng-controller="ShareController as share">
-      <div class="share" ng-show="!share.isOpen">
-        <img ng-click="share.toggle()" ng-src="{{share.image.svg}}">
+      <div class="share" ng-show="!isOpen">
+        <img ng-click="toggle()" ng-src="{{image.svg}}">
       </div>
-      <ul id="share_menu" ng-class="{ active: share.isOpen }">
+      <ul id="share_menu" ng-class="{ active: isOpen }">
          
         <li>
         <a facebook class="facebookShare" data-url='http://google.com' data-shares='shares'>
@@ -74,7 +74,7 @@ Template Name: 2014 The Era for New Thoughts
           <img class="social_icon" src="assets/img/Pinterest.svg"/>
         <div pintrest data-href='http://google.com' data-description='testing share' data-img='http://plnkr.co/img/plunker.png' data-pin-do='buttonPin' data-pin-config='beside'></div>
         </li>
-        <li><a ng-click="share.toggle()">
+        <li><a ng-click="toggle()">
           <img class="social_icon" src="assets/img/clickbutton.svg"/>
         </a>
         </li>
@@ -108,10 +108,10 @@ Template Name: 2014 The Era for New Thoughts
              </section>
         </div>
         <footer>
-     </footer>
+        </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-route.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="vendors/full_page/jquery.fullPage.js"></script>
