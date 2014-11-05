@@ -189,6 +189,9 @@ span.pluginButtonLabel {
     right: -9%; }
 
   #section1 .content .logo {
-    width: 23%; } }
+    width: 22%;
+    left: 40%; }
+  #section1 .content h1 {
+    font-size: 14px; } }
 
 /*# sourceMappingURL=new.thoughts.css.map */

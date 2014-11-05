@@ -220,12 +220,15 @@ span.pluginButtonLabel{
     .time {
        right: -9%;
     }
-
-
-    #section1 .content .logo {
-        width: 23%;
+    #section1 .content{ 
+        .logo {
+            width: 22%;
+            left: 40%;
+         }
+         h1{
+            font-size: 14px;
+          }
     }
-
 }
 
 
