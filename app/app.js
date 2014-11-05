@@ -9,7 +9,8 @@ var app = angular.module('event', ['ngRoute']);
   $FB.init('164546407087109');
  });*/
 
- app.controller('MenuController', ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll){
+ app.controller('MenuController', ['$scope', '$location', '$anchorScroll', 
+     function($scope, $location, $anchorScroll){
   $scope.images = [
         {
           svg: '//www.tedxtainan.com/app/assets/img/unfold.svg', 
@@ -51,71 +52,72 @@ var app = angular.module('event', ['ngRoute']);
   }
 }]);
 
-app.controller('ShareController', ['$scope', function($scope){
-  $scope.images = [
-            {
-              svg: '//www.tedxtainan.com/app/assets/img/unclickbutton.svg', 
-              png: '//www.tedxtainan.com/app/assets/img/unclickbutton.png'
-            },
-            {
-              svg: '//www.tedxtainan.com/app/assets/img/clickbutton.svg', 
-              png: '//www.tedxtainan.com/app/assets/img/clickbutton.png'
-            }];
-  $scope.image = $scope.images[0]
+app.controller('ShareController', ['$scope', 
+  function($scope){
+    $scope.images = [
+              {
+                svg: '//www.tedxtainan.com/app/assets/img/unclickbutton.svg', 
+                png: '//www.tedxtainan.com/app/assets/img/unclickbutton.png'
+              },
+              {
+                svg: '//www.tedxtainan.com/app/assets/img/clickbutton.svg', 
+                png: '//www.tedxtainan.com/app/assets/img/clickbutton.png'
+              }];
+    $scope.image = $scope.images[0]
 
-  this.isOpen = false;
+    this.isOpen = false;
 
-  $scope.toggle = function(){
-    this.isOpen = this.isOpen? false : true;
-  }
+    $scope.toggle = function(){
+      this.isOpen = this.isOpen? false : true;
+    }
 
-}]);
+  }]);
 
 
-app.controller('ThemeController', ['$scope', function($scope){
-    
-  $scope.speakers = [{
-                    image: {
-                        full: '',
-                        thumb: 'assets/img/unknown_speaker.svg'
+  app.controller('ThemeController', ['$scope', function($scope){
+      
+    $scope.speakers = [{
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
                     },
-                    intro: {
-                           
+                    {
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
+                    },{
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
+                    },{
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
+                    },{
+                      image: {
+                          full: '',
+                          thumb: 'assets/img/unknown_speaker.svg'
+                      },
+                      intro: {
+                             
+                      }
                     }
-                  },
-                  {
-                    image: {
-                        full: '',
-                        thumb: 'assets/img/unknown_speaker.svg'
-                    },
-                    intro: {
-                           
-                    }
-                  },{
-                    image: {
-                        full: '',
-                        thumb: 'assets/img/unknown_speaker.svg'
-                    },
-                    intro: {
-                           
-                    }
-                  },{
-                    image: {
-                        full: '',
-                        thumb: 'assets/img/unknown_speaker.svg'
-                    },
-                    intro: {
-                           
-                    }
-                  },{
-                    image: {
-                        full: '',
-                        thumb: 'assets/img/unknown_speaker.svg'
-                    },
-                    intro: {
-                           
-                    }
-                  }
-                ];
+                  ];
 
-}]);
+  }]);
