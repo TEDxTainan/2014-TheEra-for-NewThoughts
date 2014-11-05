@@ -1,13 +1,13 @@
-var app = angular.module('event', ['ngRoute']);
+var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
 
-/*app.config(function($locationProvider, $rootScopeProvider){
-      $locationProvider.html5Mode(true).hashPrefix('!');
-      $rootScopeProvider.digestTtl(20);
-});*/
+  /*app.config(function($locationProvider, $rootScopeProvider){
+        $locationProvider.html5Mode(true).hashPrefix('!');
+        $rootScopeProvider.digestTtl(20);
+  });*/
 
- /*app.run(function($FB){
+ app.run(function($FB){
   $FB.init('164546407087109');
- });*/
+ });
 
  app.controller('MenuController', ['$scope', '$location', '$anchorScroll', 
      function($scope, $location, $anchorScroll){
