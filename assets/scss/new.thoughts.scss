@@ -67,8 +67,8 @@ ul#share_menu.active{
    padding: 42px;
    border-top: 14px solid rgba(0, 167, 157, 0.4);
    .content{
+       height: inherit;
        position: relative;
-       top: -22%;
         .logo{
             left: 43%;
             position: relative;
@@ -76,7 +76,8 @@ ul#share_menu.active{
        }
 
        h1{
-         font-size: 18px;
+         position: relative;
+         font-size: 24px;
          color: #414042;;
          letter-spacing: 0.4em; 
          font-weight: lighter;
@@ -157,29 +158,36 @@ span.pluginButtonLabel{
 .tedxtainan{
     width: 250px;
     position: relative;
-    left: 74%;
-    top: -26px;
+    margin: auto;
+    left: 39%;
+    top: 172px;
 }
 
 .countdown {
     position: relative;
-    left: 30%;
-    font-family: 'Adobe Std';
     letter-spacing: 0.1em;
     font-weight: lighter;
-    font-size: 30px;
-    top: 20px;
+    font-size: 36px;
+    top: 50px;
+    width: 580px;
+    margin: auto;
+    font-family: 'Franklin Gothic';
+    color: #666666;
 }
 .time{
-    font-size: 8px;
+    font-size: 16px;
     position: relative;
     top: -40px;
-    right: -4%;
+    right: -10%;
+    margin: auto;
+    color: #F05F6D;
+    font-family: 'Franklin Gothic';
+    font-weight: 700;
     #day, #hour, #min, #sec{
         letter-spacing: 0em;
     }
 
-#section1 .content .logo {
+#section1 .logo {
     width: 18%;
 }
 
@@ -189,40 +197,40 @@ span.pluginButtonLabel{
     #section1{
         background-position-y: 280px;
     }
-    .tedxtainan{
-        right: -60%;
-        left: 63%;
-        top: 50px;
-    }
-    .countdown{
+   /* .countdown{
        left: 19%;
+    }*/
+    #section1 .content .logo {
+        width: 14%;
     }
 }
 @media screen and (max-width: 640px) and (min-width: 100px){
     #section1{
         background-position-y: 300px;
     }
-    .tedxtainan{
-        right: -60%;
-        top: 50px;
-        left: 15%;;
-    }
     .countdown{
-       left: 8%;
-       top: 47px;
-       font-size: 14px;
-       letter-spacing: 0em;
+       font-size: 16px;
+       top: 69px;
+       left: 13%;
     }
     .time {
-       right: -9%;
+       right: -7%;
     }
-
-
-#section1 .content .logo {
-    width: 20%;
-}
-
-
+    #section1 .content{ 
+        left: -70px;
+        min-width: 490px;
+        margin: auto;
+        .logo {
+            width: 22%;
+            left: 40%;
+         }
+         h1{
+            font-size: 16px;
+          }
+        .tedxtainan{
+            left:24%;
+        }
+    }
 }
 
 
