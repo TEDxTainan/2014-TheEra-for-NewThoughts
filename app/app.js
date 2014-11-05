@@ -5,9 +5,9 @@ var app = angular.module('event', ['ngRoute']);
       $rootScopeProvider.digestTtl(20);
 });*/
 
- app.run(function($FB){
+ /*app.run(function($FB){
   $FB.init('164546407087109');
- });
+ });*/
 
  app.controller('MenuController', ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll){
   $scope.images = [
