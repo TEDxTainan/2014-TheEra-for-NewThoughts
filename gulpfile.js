@@ -14,8 +14,8 @@ gulp.task('default', function () {
         .pipe(gulp.dest('dist/images'));
 });
 
-//gulp.task('default', ['html', 'css', 'js'], function () {
-//});
+gulp.task('default', ['html', 'css', 'js'], function () {
+});
 
 gulp.task('html', function() {
   var opts = {comments:true,spare:true};
