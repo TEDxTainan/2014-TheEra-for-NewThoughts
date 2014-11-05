@@ -130,8 +130,61 @@ span.pluginButtonLabel {
   top: 230px;
   left: 50px; }
 
-@media screen and (max-width: 800px) {
+.tedxtainan {
+  width: 250px;
+  position: relative;
+  left: 74%;
+  top: -26px; }
+
+.countdown {
+  position: relative;
+  left: 30%;
+  font-family: 'Adobe Std';
+  letter-spacing: 0.1em;
+  font-weight: lighter;
+  font-size: 30px;
+  top: 20px; }
+
+.time {
+  font-size: 8px;
+  position: relative;
+  top: -40px;
+  right: -4%; }
+  .time #day, .time #hour, .time #min, .time #sec {
+    letter-spacing: 0em; }
+  .time #section1 .content .logo {
+    width: 18%; }
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
   #section1 {
-    background-position-y: 280px; } }
+    background-position-y: 280px; }
+
+  .tedxtainan {
+    right: -60%;
+    left: 63%;
+    top: 50px; }
+
+  .countdown {
+    left: 19%; } }
+@media screen and (max-width: 640px) and (min-width: 100px) {
+  #section1 {
+    background-position-y: 300px; }
+
+  .tedxtainan {
+    right: -60%;
+    top: 50px;
+    left: 15%; }
+
+  .countdown {
+    left: 8%;
+    top: 47px;
+    font-size: 14px;
+    letter-spacing: 0em; }
+
+  .time {
+    right: -9%; }
+
+  #section1 .content .logo {
+    width: 20%; } }
 
 /*# sourceMappingURL=new.thoughts.css.map */
