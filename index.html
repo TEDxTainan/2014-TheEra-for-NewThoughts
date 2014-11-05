@@ -7,17 +7,19 @@ Template Name: 2014 The Era for New Thoughts
 <html xmlns="http://www.w3.org/1999/xhtml" lang='zh-TW' ng-app="event">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content=""/>
+    <meta name="description" content="TEDxTainan 2014 匯流改變的力量 激盪思辨的浪潮, TEDxTainan每年透過舉辦年會，提供一個具有影響力的舞台，邀請各個領域的創新者、改革者、領導者與夢想家，向世界分享他們的熱情與理想。以十八分鐘演講的形式，講述知識與概念的精隨。"/>
     <meta property="og:title" content="TEDxTainan The Era for New Thoughts 2014"/>
     <meta property="og:site_name" content="TEDxTainan The Era for New Thoughts 2014"/>
     <meta property="og:type" content="website"> 
+    <meta content="http://www.tedxtainan.com/app/assets/img/background.jpg" property="og:image">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>TEDxTainan The Era for New Thoughts 2014</title>
     <base href="/app/"> 
     <link rel="stylesheet" type="text/css" href="vendors/full_page/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/new.thoughts.css" />
     <link rel="shortcut icon" href="http://tedxtainancom.ipage.com/wordpress/wp-content/uploads/2013/10/favicon4.ico" type="image/x-icon">
-    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+    <link href="assets/img/background.jpg" rel="image_src" type="image/jpeg">
+    <link href='//fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
         <!--[if IE]>
     <script type="text/javascript">
     var console = { log: function() {} };
@@ -28,31 +30,31 @@ Template Name: 2014 The Era for New Thoughts
      <header>
       <div ng-controller="MenuController as menu">
         <div class="menu-icon">
-          <img ng-click="menu.toggleImg()" ng-src="{{menu.image.svg}}" />
+          <img ng-click="toggleImg()" ng-src="{{image.svg}}" />
         </div>
-        <ul id="menu" ng-class="{ active: menu.isSelect() }" ng-show="menu.isSelect()">
-          <li data-menuanchor="firstPage" ng-class="{ active: menu.isAnchor(2)}">
-            <a href="#firstPage" ng-mouseover="menu.gotoAnchor(2)">新思潮 簡介</a>
+        <ul id="menu" ng-class="{ active: isSelect() }" ng-show="isSelect()">
+          <li data-menuanchor="firstPage" ng-class="{ active: isAnchor(2)}">
+            <a href="#firstPage" ng-mouseover="gotoAnchor(2)">新思潮 簡介</a>
           </li>
-          <li data-menuanchor="secondPage" ng-class="{ active: menu.isAnchor(3)}">
-            <a href="#secondPage" ng-mouseover="menu.gotoAnchor(3)">新潮湧起 , 創新</a>
+          <li data-menuanchor="secondPage" ng-class="{ active: isAnchor(3)}">
+            <a href="#secondPage" ng-mouseover="gotoAnchor(3)">新潮湧起 , 創新</a>
           </li>
-          <li data-menuanchor="3rdPage" ng-class="{ active: menu.isAnchor(4) }">
-            <a href="#3rdPage" ng-mouseover="menu.gotoAnchor(4)">草根演繹 , 改變</a>
+          <li data-menuanchor="3rdPage" ng-class="{ active: isAnchor(4) }">
+            <a href="#3rdPage" ng-mouseover="gotoAnchor(4)">草根演繹 , 改變</a>
           </li>
-          <li data-menuanchor="4thPage" ng-class="{ active: menu.isAnchor(5) }">
-            <a href="#4thPage" ng-mouseover="menu.gotoAnchor(5)">跨越破碎 , 前行</a>
+          <li data-menuanchor="4thPage" ng-class="{ active: isAnchor(5) }">
+            <a href="#4thPage" ng-mouseover="gotoAnchor(5)">跨越破碎 , 前行</a>
           </li>
-          <li data-menuanchor="lastPage" ng-class="{ active: menu.isAnchor(6) }">
-            <a href="#lastPage" ng-mouseover="menu.gotoAnchor(6)">如何參加新思潮</a>
+          <li data-menuanchor="lastPage" ng-class="{ active: isAnchor(6) }">
+            <a href="#lastPage" ng-mouseover="gotoAnchor(6)">如何參加新思潮</a>
           </li>
         </ul>
         </div>
       <div ng-controller="ShareController as share">
-      <div class="share" ng-show="!share.isOpen">
-        <img ng-click="share.toggle()" ng-src="{{share.image.svg}}">
+      <div class="share" ng-show="!isOpen">
+        <img ng-click="toggle()" ng-src="{{image.svg}}">
       </div>
-      <ul id="share_menu" ng-class="{ active: share.isOpen }">
+      <ul id="share_menu" ng-class="{ active: isOpen }">
          
         <li>
         <a facebook class="facebookShare" data-url='http://google.com' data-shares='shares'>
@@ -60,7 +62,7 @@ Template Name: 2014 The Era for New Thoughts
         </a>
         </li>
         <li>
-        <a twitter  data-lang="en" data-count='horizontal' data-url='http://google.com' data-via='notsosleepy' data-size="medium" data-text='Testing Twitter Share' >
+        <a twitter  data-lang="en" data-count='horizontal' data-url='//google.com' data-via='notsosleepy' data-size="medium" data-text='Testing Twitter Share' >
           <img class="social_icon" src="assets/img/Twitter.svg"/>
         </a>
         </li>
@@ -74,7 +76,7 @@ Template Name: 2014 The Era for New Thoughts
           <img class="social_icon" src="assets/img/Pinterest.svg"/>
         <div pintrest data-href='http://google.com' data-description='testing share' data-img='http://plnkr.co/img/plunker.png' data-pin-do='buttonPin' data-pin-config='beside'></div>
         </li>
-        <li><a ng-click="share.toggle()">
+        <li><a ng-click="toggle()">
           <img class="social_icon" src="assets/img/clickbutton.svg"/>
         </a>
         </li>
@@ -112,12 +114,12 @@ Template Name: 2014 The Era for New Thoughts
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-route.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="vendors/full_page/jquery.fullPage.js"></script>
     <script type="text/javascript" src="assets/js/new.thoughts.js"></script>
     <script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
-    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="//platform.twitter.com/widgets.js"></script>
     <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
   </body>
 </html>
