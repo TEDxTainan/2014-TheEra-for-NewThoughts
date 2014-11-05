@@ -12,7 +12,7 @@
 
   
   app.controller('MenuController', ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll){
-    /*$scope.images = [
+    $scope.images = [
           {
             svg: '//www.tedxtainan.com/app/assets/img/unfold.svg', 
             png: '//www.tedxtainan.com/app/assets/img/unfold.png'
@@ -50,9 +50,8 @@
 
     $scope.isAnchor = function(x) {
       return this.anchor === x;
-    }*/
+    }
   }]);
-/*
   app.controller('ShareController', ['$scope', function($scope){
     $scope.images = [
               {
@@ -123,5 +122,4 @@
 
   }]);
 
-
-}) ();*/
+}) ();
