@@ -1,14 +1,14 @@
 (function() {
-  var app = angular.module('event', ['ngRoute','djds4rce.angular-socialshare']);
+  var app = angular.module('event', ['ngRoute']);
 
   app.config(function($locationProvider, $rootScopeProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
-        $rootScopeProvider.digestTtl(20);
+ //       $rootScopeProvider.digestTtl(20);
   });
 
-  app.run(function($FB){
-    $FB.init('164546407087109');
-  });
+//  app.run(function($FB){
+  //  $FB.init('164546407087109');
+ // });
 
   
   app.controller('MenuController', ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll){
@@ -52,7 +52,7 @@
       return this.anchor === x;
     }*/
   }]);
-
+/*
   app.controller('ShareController', ['$scope', function($scope){
     $scope.images = [
               {
@@ -124,4 +124,4 @@
   }]);
 
 
-}) ();
+}) ();*/
