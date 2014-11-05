@@ -178,9 +178,14 @@ span.pluginButtonLabel{
     #day, #hour, #min, #sec{
         letter-spacing: 0em;
     }
+
+#section1 .content .logo {
+    width: 18%;
 }
 
-@media screen and (min-width: 640px) and (max-width: 800px) {
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
     #section1{
         background-position-y: 280px;
     }
@@ -200,7 +205,7 @@ span.pluginButtonLabel{
     .tedxtainan{
         right: -60%;
         top: 50px;
-        left: 30%;
+        left: 15%;;
     }
     .countdown{
        left: 8%;
@@ -208,10 +213,16 @@ span.pluginButtonLabel{
        font-size: 14px;
        letter-spacing: 0em;
     }
-
     .time {
        right: -9%;
     }
+
+
+#section1 .content .logo {
+    width: 20%;
+}
+
+
 }
 
 
