@@ -136,6 +136,23 @@ span.pluginButtonLabel {
   left: 74%;
   top: -26px; }
 
+.countdown {
+  position: relative;
+  left: 30%;
+  font-family: 'Adobe Std';
+  letter-spacing: 0.1em;
+  font-weight: lighter;
+  font-size: 30px;
+  top: 20px; }
+
+.time {
+  font-size: 8px;
+  position: relative;
+  top: -40px;
+  right: -4%; }
+  .time #day, .time #hour, .time #min, .time #sec {
+    letter-spacing: 0em; }
+
 @media screen and (max-width: 800px) {
   #section1 {
     background-position-y: 280px; } }

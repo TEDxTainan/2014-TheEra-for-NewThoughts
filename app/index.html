@@ -85,6 +85,8 @@ Template Name: 2014 The Era for New Thoughts
             <div class="content" id="main">
               <img class="logo" src="assets/img/logo.svg"/>
                 <h1>匯流改變的力量 激盪思辨的浪潮</h1>
+                <div class="countdown"><span class="time">DAYS</span><span id="day">    </span>
+                  <span class="time">HOURS</span><span id="hour">    </span><span class="time">MINUTES</span><span id="min">    </span><span class="time">SDCONDS</span><span id="sec">    </span></div>
               <img class="tedxtainan" src="assets/img/white.png"/>
             </div>
             </section>
@@ -115,6 +117,38 @@ Template Name: 2014 The Era for New Thoughts
     <script type="text/javascript" src="app.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+     <script src="vendors/jquery/jquery.timers.js"></script>
+    <script type="text/javascript">
+      var startDate = new Date();
+      var endDate = new Date('2014/11/08 21:00');
+      var spantime = (endDate - startDate)/1000;
+       $(document).ready(function () {
+              $(this).everyTime('1s', function(i) {
+                  spantime --;
+                   var d = Math.floor(spantime / (24 * 3600)).toString();
+                   var h = Math.floor((spantime % (24*3600))/3600).toString();
+                   var m = Math.floor((spantime % 3600)/(60)).toString();
+                   var s = Math.floor(spantime%60).toString();
+       
+                   if(spantime>0){
+                      console.log(d);
+                      d = d.length == 1 ? '0' + d : d; 
+                      h = h.length == 1 ? '0' + h : h; 
+                      m = m.length == 1 ? '0' + m : m; 
+                      s = s.length == 1 ? '0' + s : s; 
+                      $("#day").text(d);
+                      $("#hour").text(h);
+                      $("#min").text(m);
+                      $("#sec").text(s);
+                   }else{ // 避免倒數變成負的
+                      $("#day").text(0);
+                      $("#hour").text(0);
+                      $("#min").text(0);
+                      $("#sec").text(0);
+                   }
+               });
+         });
+      </script>
     <script type="text/javascript" src="vendors/full_page/jquery.fullPage.js"></script>
     <script type="text/javascript" src="assets/js/new.thoughts.js"></script>
     <script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
