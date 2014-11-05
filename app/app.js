@@ -35,8 +35,8 @@
       console.log(this.index);
     };
 
-    console.log($scope);
     $scope.isSelect = function(){
+    console.log($scope);
       return ($scope.image === $scope.images[1]) || ($scope.image === $scope.images[2]);
     };
     
