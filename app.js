@@ -33,10 +33,8 @@ var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
   $scope.toggleImg = function(){
     this.index = this.index == 1 ? 0 : 1;
     $scope.image = $scope.images[this.index];
-    console.log(this.index);
   };
   $scope.isSelect = function(){
-    console.log($scope);
     change = ($scope.image === $scope.images[1]) || ($scope.image === $scope.images[2]); 
     return change;
   };
