@@ -258,9 +258,11 @@ span.pluginButtonLabel{
        font-size: 14px;
     }
     #section1 .content{ 
-        min-width: 490px;
         margin: auto;
-        left: -92px;
+        left: 0;
+        right: 0;
+        position: absolute;
+        top: 50px;
         .logo {
             width: 22%;
             left: 40%;
