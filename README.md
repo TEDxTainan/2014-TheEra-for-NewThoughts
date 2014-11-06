@@ -17,4 +17,4 @@
 
     $ npm start
 
-然後在 browser 輸入 [http://localhost:8000](http://localhost:8000)
+然後在 browser 輸入 [http://localhost:8000/app/](http://localhost:8000/app/)
