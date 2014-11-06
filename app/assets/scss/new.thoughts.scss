@@ -40,6 +40,9 @@ html, body{
 ul#menu.active{
     display: block;
 }
+#ticket{
+    padding-right: 5px;
+}
 
 .share, #share_menu{
     position: fixed;
@@ -63,7 +66,7 @@ ul#share_menu.active{
    background-repeat: no-repeat;
    background-size: 100%, 95%;
    background-position-x: 50%;
-   background-position-y: 185px;
+   background-position-y: 240px;
    padding: 42px;
    border-top: 14px solid rgba(0, 167, 157, 0.4);
    .content{
@@ -160,28 +163,27 @@ span.pluginButtonLabel{
     position: relative;
     margin: auto;
     left: 39%;
-    top: 172px;
+    top: 110px;
 }
 
 .countdown {
+    width: 630px;
     position: relative;
-    letter-spacing: 0.1em;
+    padding: 4px;
+    letter-spacing: 0.01em;
     font-weight: lighter;
-    font-size: 36px;
+    font-size: 46px;
     top: 50px;
-    width: 580px;
     margin: auto;
-    font-family: 'Franklin Gothic';
     color: #666666;
 }
 .time{
-    font-size: 16px;
+    font-size: 18px;
     position: relative;
-    top: -40px;
-    right: -10%;
+    top: -60px;
+    right: -10.5%;
     margin: auto;
     color: #F05F6D;
-    font-family: 'Franklin Gothic';
     font-weight: 700;
     #day, #hour, #min, #sec{
         letter-spacing: 0em;
@@ -211,15 +213,17 @@ span.pluginButtonLabel{
     .countdown{
        font-size: 16px;
        top: 69px;
-       left: 13%;
+       left: 0%;
+       width: 372px;
     }
     .time {
-       right: -7%;
+       right: -8%;
+       font-size: 14px;
     }
     #section1 .content{ 
-        left: -70px;
         min-width: 490px;
         margin: auto;
+        left: -92px;
         .logo {
             width: 22%;
             left: 40%;
