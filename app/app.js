@@ -24,12 +24,9 @@ var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
           svg: '//www.tedxtainan.com/app/assets/img/select.svg', 
           png: '//www.tedxtainan.com/app/assets/img/select.png'
         }];
-  
   this.index = 0;
-  this.anchor = 0;
   var change = false;
   $scope.image = $scope.images[0];
-
   $scope.toggleImg = function(){
     this.index = this.index == 1 ? 0 : 1;
     $scope.image = $scope.images[this.index];
@@ -40,13 +37,16 @@ var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
   };
   
   $scope.gotoAnchor = function(x){
-    this.anchor = x;
-    $scope.image = $scope.images[2];
+    if(x != 1){
+      $scope.image = $scope.images[2];
+    }
     $.fn.fullpage.moveTo(x);
   };
 
-  $scope.isAnchor = function(x) {
-    return this.anchor === x;
+  $scope.isAnchor = function(viewLocation) {
+    var active = (viewLocation === $location.path());
+			var index = $(this).parent().index();
+    return active;
   }
 }]);
 
@@ -72,7 +72,7 @@ app.controller('ShareController', ['$scope',
   }]);
 
 
-  app.controller('ThemeController', ['$scope', function($scope){
+  app.controller('ThemeController', ['$scope', '$location', function($scope, $location){
       
     $scope.speakers = [{
                       image: {
@@ -118,4 +118,8 @@ app.controller('ShareController', ['$scope',
                     }
                   ];
 
+      $scope.isSubtheme = function(){
+        var pos = $location.path();
+        return pos.indexOf('section') != -1;      
+      };
   }]);
