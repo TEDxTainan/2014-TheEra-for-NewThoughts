@@ -26,34 +26,34 @@ Template Name: 2014 The Era for New Thoughts
     </script>
     <![endif]-->
     <style>
-      #section1{
+      .section{
          background-image: url("assets/img/background.jpg");
       }
     </style>
-   
    </head>
    <body>
      <header>
       <div ng-controller="MenuController as menu">
         <div class="menu-icon">
           <img ng-click="toggleImg()" ng-src="{{image.svg}}" />
+          <a href="#home" class="back"><img ng-click="gotoAnchor(1)" src="assets/img/back.svg"/></a>
         </div>
         <ul id="menu" ng-class="{ active: isSelect() }" ng-show="isSelect()">
-          <li data-menuanchor="firstPage" ng-class="{ active: isAnchor(2)}">
+          <li  ng-class="{ active: isAnchor('/brief') }">
             <a href="#firstPage" ng-mouseover="gotoAnchor(2)">新思潮 簡介</a>
           </li>
-          <li data-menuanchor="secondPage" ng-class="{ active: isAnchor(3)}">
-            <a href="#secondPage" ng-mouseover="gotoAnchor(3)">新潮湧起 , 創新</a>
+          <li data-menuanchor="secondPage" ng-class="{ active: isAnchor('/section1') }">
+            <a href="#secondPage" ng-mouseover="gotoAnchor(3)">新潮湧起 , 創造</a>
           </li>
-          <li data-menuanchor="3rdPage" ng-class="{ active: isAnchor(4) }">
+          <li data-menuanchor="3rdPage" ng-class="{ active: isAnchor('/section2') }">
             <a href="#3rdPage" ng-mouseover="gotoAnchor(4)">草根演繹 , 改變</a>
           </li>
-          <li data-menuanchor="4thPage" ng-class="{ active: isAnchor(5) }">
+          <li data-menuanchor="4thPage" ng-class="{ active: isAnchor('/section3') }">
             <a href="#4thPage" ng-mouseover="gotoAnchor(5)">跨越破碎 , 前行</a>
           </li>
-          <li data-menuanchor="lastPage" ng-class="{ active: isAnchor(6) }">
+          <!--<li data-menuanchor="lastPage" ng-class="{ active: isAnchor('/participate') }">
             <a href="#lastPage" ng-mouseover="gotoAnchor(6)">如何參加新思潮</a>
-          </li>
+            </li>!-->
         </ul>
         </div>
       <div ng-controller="ShareController as share">
@@ -95,38 +95,72 @@ Template Name: 2014 The Era for New Thoughts
               <h1>匯流改變的力量 激盪思辨的浪潮</h1>
               <div class="countdown"><span id="ticket" class="time">票務</span><span class="time">DAYS</span><span id="day">    </span>
                   <span class="time">HOURS</span><span id="hour">    </span><span class="time">MINUTES</span><span id="min">    </span><span class="time">SDCONDS</span><span id="sec">    </span></div>
-              <img class="tedxtainan" src="assets/img/white.png"/>
             </div>
             </section>
-           <section class="section" id="section2">
+            <section class="section" id="section2">
+            <div class="content">
+              <img class="logo" src="assets/img/logo.svg"/>
+              <div class="title">
+              <p>新思潮 The Era for New Thoughts<br>
+              「匯流改變的力量，激盪思辨的浪潮」</p>
+              </div>
+              <p>這一年，台灣發生了許多事。<p/>
+              <p>而時代的洪流將每個人身不由己地捲了進去。<br/>
+              我們可以選擇掙扎，或者任自漂流。<br/>
+              但願我們夠有勇氣，就能乘著這股洪流，卷起一道激浪。<br/>
+                在台灣，還有許多創新者、改革者、夢想家，用著自己的熱情與理想，努力將洪流導向一個更美好的未來。</p><p>
+                有人試著從荒蕪之中找尋一線生機，試著破土而新生。<br/>
+                有人默默耕耘著台南這片文化沃土，保存深厚的底蘊。<br/>
+                有人則在哀慟的破碎中徒步前行著，傳播重生的希望。
+                </p><p>
+                TEDxTainan與你跨越過去的徬徨與傷痛，著手解決眼前的問題，開拓新的格局，屬於我們的世代！</p>
+              </div>
             </section>
             <section class="section" id="section3" ng-controller="ThemeController as theme">
-                <div ng-repeat="speaker in speakers" class="speaker_thumb">
-                  <img ng-src="{{speaker.image.thumb}}"/>
-                </div>
+              <div class="content">
+                <div class="title">
+                  <img src="assets/img/theme1.png"></img>
+                </div><p>
+                    這是一波不斷推進的城市浪潮，也是一群浪頭先鋒者，帶著堅毅的態度，勇敢衝撞現狀。先鋒開拓格局，讓我們得以最遼闊的視野，感受能量的衝擊與創造的脈動。
+                </p>
+              </div>
              </section>
              <section class="section" id="section4" ng-controller="ThemeController as theme">
-                <div ng-repeat="speaker in speakers" class="speaker_thumb">
-                  <img ng-src="{{speaker.image.thumb}}"/>
-                </div>
+             <div class="content">
+               <div class="title">
+                  <img src="assets/img/theme2.png"></img>
+                </div><p>
+                在府城有一群草根默默深植，讓我們開始學會溫厚與踏實。在不斷的累積後，台南人沈澱了深厚的文化底藴，並在看似平凡的生活中，看見曙光，然後邁向期待。
+                </p>
+              </div>
                 </section>
-             <section class="section" id="section5" ng-controller="ThemeController as theme">
-                <div ng-repeat="speaker in speakers" class="speaker_thumb">
+                <section class="section" id="section5" ng-controller="ThemeController as theme">
+                <div class="content">
+                  <div class="title">
+                    <img src="assets/img/theme3.png"></img>
+                  </div><p>
+                    動盪的時代，總是充斥瘡疤。這些接踵而至的事件，帶來哀慟的破碎。卻總有一群可貴的社會力量，腳踩瓦礫堆，用行動帶領我們跨越、看見裂縫外的暖陽。
+                      </p>
+                  </div>
+             </section>
+             <!--<section class="section" id="section6">
+             </section>!-->
+        </div>
+        <div class="bottom" ng-controller="ThemeController as theme">
+              <div ng-repeat="speaker in speakers" class="speaker_thumb" ng-show="isSubtheme()">
                   <img ng-src="{{speaker.image.thumb}}"/>
-                </div>
-             </section>
-             <section class="section" id="section6">
-             </section>
+              </div>
+              <img class="tedxtainan" src="assets/img/white.png"/>
         </div>
         <footer>
-     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-route.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+        </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="vendors/full_page/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="vendors/full_page/jquery.fullPage.min.js"></script>
     <script type="text/javascript" src="assets/js/new.thoughts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
     <script src="//platform.twitter.com/widgets.js"></script>
     <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
