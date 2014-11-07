@@ -105,7 +105,6 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     }
   }
 ]);
-
 app.directive('countDown', function(){
   return {
       restrict: 'E',
