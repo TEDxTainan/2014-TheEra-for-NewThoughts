@@ -36,7 +36,8 @@ Template Name: 2014 The Era for New Thoughts
       <nav-menu></nav-menu>
       <share-menu></share-menu>
     </header>
-        <div id="fullpage">
+      <div id="fullpage">
+
           <section class="section" id="section1">
             <div class="content" id="main">
               <img class="logo" src="assets/img/logo.svg"/>
@@ -44,6 +45,7 @@ Template Name: 2014 The Era for New Thoughts
               <count-down></count-down>
             </div>
             </section>
+
             <section class="section" id="section2">
             <div class="content">
               <img class="logo" src="assets/img/logo.svg"/>
@@ -62,7 +64,8 @@ Template Name: 2014 The Era for New Thoughts
                 </p><p>
                 TEDxTainan與你跨越過去的徬徨與傷痛，著手解決眼前的問題，開拓新的格局，屬於我們的世代！</p>
               </div>
-            </section>
+              </section>
+
             <section class="section" id="section3">
             <div class="content">
               <div class="about_theme" ng-hide="isClick">
@@ -76,7 +79,8 @@ Template Name: 2014 The Era for New Thoughts
                   {{speakerBrief}}
                 </div>
               </div>
-             </section>
+            </section>
+
              <section class="section" id="section4">
              <div class="content">
                <div class="title">
@@ -85,8 +89,9 @@ Template Name: 2014 The Era for New Thoughts
                 在府城有一群草根默默深植，讓我們開始學會溫厚與踏實。在不斷的累積後，台南人沈澱了深厚的文化底藴，並在看似平凡的生活中，看見曙光，然後邁向期待。
                 </p>
               </div>
-                </section>
-                <section class="section" id="section5">
+              </section>
+
+              <section class="section" id="section5">
                 <div class="content">
                   <div class="title">
                     <img src="assets/img/theme3-2.png"></img>
@@ -95,15 +100,18 @@ Template Name: 2014 The Era for New Thoughts
                       </p>
                   </div>
              </section>
+             
              <section class="section" id="section6">
              </section>
         </div>
+
         <div class="bottom">
               <div ng-repeat="speaker in getSpeakers()" class="speaker_thumb" ng-show="isSubtheme()">
                 <img ng-src="{{speaker.image.thumb}}" ng-mouseover="showInformation(speaker)"/>
               </div>
               <img class="tedxtainan" src="assets/img/white.png"/>
         </div>
+
         <footer>
         </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
