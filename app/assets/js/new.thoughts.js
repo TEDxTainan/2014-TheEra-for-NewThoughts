@@ -11,9 +11,9 @@ $(document).ready(function() {
         var e = "#menu li" + ":nth-child(" + (index-1).toString() + ")";
         activeItem = $(e);
         activeItem
-            .addClass('active')
-            .siblings().removeClass('active');
-    }
+          .addClass('active')
+          .siblings().removeClass('active');
+  }
 
   });
 });
