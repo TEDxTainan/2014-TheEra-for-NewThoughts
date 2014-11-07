@@ -75,7 +75,6 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
         $scope.section1 = response.section1;
         $scope.section2 = response.section2;
         $scope.section3 = response.section3;
-        console.log(response);
       }).error(function(data, status, headers, config) {
       console.log(status);
     });
