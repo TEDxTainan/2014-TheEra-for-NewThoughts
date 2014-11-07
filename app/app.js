@@ -70,7 +70,7 @@ app.directive('shareMenu', function() {
 });
 app.controller('ThemeController', ['$scope', '$location', '$http',
   function($scope, $location, $http) {
-    $http.get("http://localhost:8000/app/speakers/speakers.json").success(
+    $http.get("/app/speakers/speakers.json").success(
       function(response) {
         $scope.section1 = response.section1;
         $scope.section2 = response.section2;
