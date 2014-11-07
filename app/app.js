@@ -70,7 +70,7 @@ app.directive('shareMenu', function() {
 });
 app.controller('ThemeController', ['$scope', '$location', '$http',
   function($scope, $location, $http) {
-    $http.get("/app/speakers/speakers.json").success(
+    $http.get("https://rawgit.com/TEDxTainan/2014-TheEra-for-NewThoughts/test/app/speakers/speakers.json").success(
       function(response) {
         $scope.section1 = response.section1;
         $scope.section2 = response.section2;
