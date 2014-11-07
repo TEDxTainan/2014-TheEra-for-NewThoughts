@@ -33,60 +33,8 @@ Template Name: 2014 The Era for New Thoughts
    </head>
    <body ng-controller="ThemeController as theme">
      <header>
-      <div ng-controller="MenuController as menu">
-        <div class="menu-icon">
-          <img ng-click="toggleImg()" ng-src="{{image.svg}}" />
-          <a href="#home" class="back"><img ng-click="gotoAnchor(1)" src="assets/img/back.svg"/></a>
-        </div>
-        <ul id="menu" ng-class="{ active: isSelect() }" ng-show="isSelect()">
-          <li  ng-class="{ active: isAnchor('/brief', 1) }">
-            <a href="#firstPage" ng-mouseover="gotoAnchor(2)">新思潮 簡介</a>
-          </li>
-          <li data-menuanchor="secondPage" ng-class="{ active: isAnchor('/section1', 2) }">
-            <a href="#secondPage" ng-mouseover="gotoAnchor(3)">新潮湧起 , 創造</a>
-          </li>
-          <li data-menuanchor="3rdPage" ng-class="{ active: isAnchor('/section2', 3) }">
-            <a href="#3rdPage" ng-mouseover="gotoAnchor(4)">草根演繹 , 改變</a>
-          </li>
-          <li data-menuanchor="4thPage" ng-class="{ active: isAnchor('/section3', 4) }">
-            <a href="#4thPage" ng-mouseover="gotoAnchor(5)">跨越破碎 , 前行</a>
-          </li>
-          <!--<li data-menuanchor="lastPage" ng-class="{ active: isAnchor('/participate') }">
-            <a href="#lastPage" ng-mouseover="gotoAnchor(6)">如何參加新思潮</a>
-            </li>!-->
-        </ul>
-        </div>
-      <div ng-controller="ShareController as share">
-      <div class="share" ng-show="!isOpen">
-        <img ng-click="toggle()" ng-src="{{image.svg}}">
-      </div>
-      <ul id="share_menu" ng-class="{ active: isOpen }">
-         
-        <li>
-        <a facebook class="facebookShare" data-url='http://www.tedxtainan.com/the-era-new-thoughts-2014/' data-shares='shares'>
-          <img class="social_icon" src="assets/img/facebook.svg"/>
-        </a>
-        </li>
-        <li>
-        <a twitter  data-lang="en" data-count='horizontal' data-url='https://www.tedxtainan.com/the-era-new-thoughts-2014/' data-via='notsosleepy' data-size="medium" data-text='Testing Twitter Share' >
-          <img class="social_icon" src="assets/img/Twitter.svg"/>
-        </a>
-        </li>
-        <li>
-        <a href="https://plus.google.com/share?url=https://www.tedxtainan.com/the-era-new-thoughts-2014/" onclick="javascript:window.open(this.href,
-          '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-          <img class="social_icon" src="assets/img/GooglePlus.svg"/>
-        </a>
-        </li>
-        <li>
-          <img class="social_icon" src="assets/img/Pinterest.svg"/>
-        <div pintrest data-href='https://www.tedxtainan.com/the-era-new-thoughts-2014/' data-description='testing share'  data-pin-do='buttonPin' data-pin-config='beside'></div>
-        </li>
-        <li><a ng-click="toggle()">
-          <img class="social_icon" src="assets/img/clickbutton.svg"/>
-        </a>
-        </li>
-      </ul>
+      <nav-menu></nav-menu>
+      <share-menu></share-menu>
     </header>
         <div id="fullpage">
           <section class="section" id="section1">
