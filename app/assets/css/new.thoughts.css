@@ -256,11 +256,13 @@ span.pluginButtonLabel {
     margin: auto; } }
 .bottom {
   position: fixed;
-  background: linear-gradient(to top, #fff 8%, #FFF, rgba(243, 243, 243, 0) 100%);
   width: 100%;
   height: 167px;
   display: block;
   z-index: 5;
   bottom: 0px; }
+
+.bottom.active {
+  background: linear-gradient(to top, #fff 8%, #FFF, rgba(243, 243, 243, 0) 100%); }
 
 /*# sourceMappingURL=new.thoughts.css.map */
