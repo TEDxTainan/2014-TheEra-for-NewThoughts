@@ -6,6 +6,10 @@ html, body {
   html li, body li {
     list-style: none; }
 
+menu {
+  position: fixed;
+  z-index: 99; }
+
 .menu-icon, #menu {
   position: fixed;
   left: 2%;

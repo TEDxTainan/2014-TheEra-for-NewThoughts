@@ -6,56 +6,68 @@ var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
 app.run(function($FB) {
   $FB.init('164546407087109');
 });
-app.controller('MenuController', ['$scope', '$location', '$anchorScroll',
-  function($scope, $location, $anchorScroll) {
-    $scope.index = 0;
-    $scope.images = [{
-      svg: '//www.tedxtainan.com/app/assets/img/unfold.svg',
-      png: '//www.tedxtainan.com/app/assets/img/unfold.png'
-    }, {
-      svg: '//www.tedxtainan.com/app/assets/img/unselect.svg',
-      png: '//www.tedxtainan.com/app/assets/img/unselect.png'
-    }, {
-      svg: '//www.tedxtainan.com/app/assets/img/select.svg',
-      png: '//www.tedxtainan.com/app/assets/img/select.png'
-    }];
-    $scope.image = $scope.images[0];
-    $scope.toggleImg = function() {
-      $scope.index = $index.index == 1 ? 0 : 1;
-      $scope.image = $scope.images[this.index];
+app.directive('navMenu', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'nav_menu.html',
+      controller: function($scope, $location, $anchorScroll) {
+        this.index = 0;
+        this.images = [{
+          svg: '//www.tedxtainan.com/app/assets/img/unfold.svg',
+          png: '//www.tedxtainan.com/app/assets/img/unfold.png'
+        }, {
+          svg: '//www.tedxtainan.com/app/assets/img/unselect.svg',
+          png: '//www.tedxtainan.com/app/assets/img/unselect.png'
+        }, {
+          svg: '//www.tedxtainan.com/app/assets/img/select.svg',
+          png: '//www.tedxtainan.com/app/assets/img/select.png'
+        }];
+        this.image = this.images[0];
+        this.toggleImg = function() {
+          this.index = this.index == 1 ? 0 : 1;
+          this.image = this.images[this.index];
+        };
+        this.isSelect = function() {
+          return (this.image === this.images[1]) || (this.image === 
+            this.images[2]);
+        };
+        this.gotoAnchor = function(x) {
+          if (x != 1) {
+            this.image = this.images[2];
+          }
+          $.fn.fullpage.moveTo(x);
+        };
+        this.isAnchor = function(viewLocation) {
+          var active = (viewLocation === $location.path());
+          return active;
+        }
+      },
+      controllerAs: 'nav'
     };
-    $scope.isSelect = function() {
-      return ($scope.image === $scope.images[1]) || ($scope.image ===
-        $scope.images[2]);
-    };
-    $scope.gotoAnchor = function(x) {
-      if (x != 1) {
-        $scope.image = $scope.images[2];
+  });
+
+app.directive('shareMenu', function() {
+  return{
+    restrict: 'E',
+    templateUrl: 'share_menu.html',
+    controller: function($scope) {
+      this.images = [{
+        svg: '//www.tedxtainan.com/app/assets/img/unclickbutton.svg',
+        png: '//www.tedxtainan.com/app/assets/img/unclickbutton.png'
+      }, {
+        svg: '//www.tedxtainan.com/app/assets/img/clickbutton.svg',
+        png: '//www.tedxtainan.com/app/assets/img/clickbutton.png'
+      }];
+      this.image = this.images[0]
+      this.isOpen = false;
+      this.toggle = function() {
+        console.log(this.isOpen);
+        this.isOpen = this.isOpen ? false : true;
       }
-      $.fn.fullpage.moveTo(x);
-    };
-    $scope.isAnchor = function(viewLocation) {
-      var active = (viewLocation === $location.path());
-      return active;
-    }
-  }
-]);
-app.controller('ShareController', ['$scope',
-  function($scope) {
-    $scope.images = [{
-      svg: '//www.tedxtainan.com/app/assets/img/unclickbutton.svg',
-      png: '//www.tedxtainan.com/app/assets/img/unclickbutton.png'
-    }, {
-      svg: '//www.tedxtainan.com/app/assets/img/clickbutton.svg',
-      png: '//www.tedxtainan.com/app/assets/img/clickbutton.png'
-    }];
-    $scope.image = $scope.images[0]
-    this.isOpen = false;
-    $scope.toggle = function() {
-      this.isOpen = this.isOpen ? false : true;
-    }
-  }
-]);
+    },
+    controllerAs: 'share'
+  };
+});
 app.controller('ThemeController', ['$scope', '$location', '$http',
   function($scope, $location, $http) {
     $http.get("http://localhost:8000/app/speakers/speakers.json").success(
