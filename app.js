@@ -43,9 +43,8 @@ var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
     $.fn.fullpage.moveTo(x);
   };
 
-  $scope.isAnchor = function(viewLocation) {
+  $scope.isAnchor = function(viewLocation, index) {
     var active = (viewLocation === $location.path());
-			var index = $(this).parent().index();
     return active;
   }
 }]);
@@ -72,54 +71,48 @@ app.controller('ShareController', ['$scope',
   }]);
 
 
-  app.controller('ThemeController', ['$scope', '$location', function($scope, $location){
+  app.controller('ThemeController', ['$scope', '$location', '$http', function($scope, $location, $http){
       
-    $scope.speakers = [{
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    },
-                    {
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    },{
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    },{
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    },{
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    }
-                  ];
-
+      $http.get("http://localhost:8000/app/speakers/speakers.json")
+             .success(function(response) {
+                $scope.section1 = response.section1;
+                $scope.section2 = response.section2;
+                $scope.section3 = response.section3;
+             })
+             .error(function(data, status, headers, config) {
+                console.log(status);
+             });
+      
       $scope.isSubtheme = function(){
         var pos = $location.path();
         return pos.indexOf('section') != -1;      
       };
+
+      $scope.getSpeakers = function(){
+        var section = $location.path()
+        
+        if(section === '/section1'){
+          return $scope.section1;
+        }
+        else if(section === '/section2'){
+          return $scope.section2;
+        }
+        else if (section === '/section3'){
+          return $scope.section3;
+        }
+        else{
+          return null;
+        }
+          $scope.isClick = false;
+      }; 
+      $scope.showInformation = function(speaker){
+          $scope.speakerImage = speaker.image;
+          $scope.speakerBrief = speaker.brief;
+          $scope.isClick = true;
+      };
+
+      $scope.isClick = function(){
+        return $scope.isClick;
+      }
+
   }]);
