@@ -118,7 +118,7 @@ ul#share_menu.active {
   width: 10px;
   right: 0px; }
 
-.section:before, .section1:after {
+.section:before, .section:after {
   /* Safari 5.1 to 6.0 */
   background: -webkit-repeating-linear-gradient(transparent, rgba(0, 167, 157, 0.4) 1.5%, transparent 60%, transparent, 100%);
   /* Opera 11.1 to 12.0 */
@@ -246,7 +246,10 @@ span.pluginButtonLabel {
       width: 60%; }
 
   #section2 .content img, .back {
-    display: none; } }
+    display: none; }
+
+  #section3 img, #section4 img, #section5 img {
+    margin: auto; } }
 .bottom {
   position: fixed;
   background: linear-gradient(to top, #fff 8%, #FFF, rgba(243, 243, 243, 0) 100%);
