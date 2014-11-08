@@ -42,7 +42,7 @@ Template Name: 2014 The Era for New Thoughts
             <div class="content" id="main">
               <img class="logo" src="assets/img/logo.svg"/>
               <h1>匯流改變的力量 激盪思辨的浪潮</h1>
-              <count-down></count-down>
+              <a href="http://www.accupass.com/go/tedxtainan2014" class="myButton">購票</a>
             </div>
             </section>
 
@@ -68,15 +68,15 @@ Template Name: 2014 The Era for New Thoughts
 
             <section class="section" id="section3">
             <div class="content">
-              <div class="about_theme" ng-hide="isClick">
+              <div class="about_theme" ng-hide="theme.isClick">
                 <div class="title">
                   <img src="assets/img/theme1-2.png"></img>
                 </div><p>
                 這是一波不斷推進的城市浪潮，也是一群浪頭先鋒者，帶著堅毅的態度，勇敢衝撞現狀。先鋒開拓格局，讓我們得以最遼闊的視野，感受能量的衝擊與創造的脈動。
                 </p>
                 </div>
-                <div ng-show="isClick">
-                  {{speakerBrief}}
+                <div ng-show="theme.isClick">
+                  {{theme.speakerBrief}}
                 </div>
               </div>
             </section>
@@ -105,15 +105,16 @@ Template Name: 2014 The Era for New Thoughts
              </section>
         </div>
 
-        <div class="bottom">
-              <div ng-repeat="speaker in getSpeakers()" class="speaker_thumb" ng-show="isSubtheme()">
-                <img ng-src="{{speaker.image.thumb}}" ng-mouseover="showInformation(speaker)"/>
+        <div class="bottom" ng-class="{ active: theme.isSubtheme()}">
+              <div ng-repeat="speaker in theme.getSpeakers()" class="speaker_thumb" ng-show="theme.isSubtheme()">
+                <img ng-src="{{speaker.image.thumb}}" ng-mouseover="theme.showInformation(speaker)"/>
               </div>
               <img class="tedxtainan" src="assets/img/white.png"/>
         </div>
 
         <footer>
         </footer>
+        <div id="fb-root"></div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="vendors/full_page/jquery.fullPage.min.js"></script>
