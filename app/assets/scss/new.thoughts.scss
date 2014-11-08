@@ -320,3 +320,33 @@ span.pluginButtonLabel{
 .bottom.active{
     background: linear-gradient(to top,#fff 8%,#FFF,rgba(243, 243, 243, 0) 100%);
 }
+
+
+.myButton {
+    -moz-box-shadow:inset 5px 45px 13px -14px #e67a73;
+    -webkit-box-shadow:inset 5px 45px 13px -14px #e67a73;
+    box-shadow:inset 5px 45px 13px -14px #e67a73;
+    background-color:#e4685d;
+    -moz-border-radius:13px;
+    -webkit-border-radius:13px;
+    border-radius:13px;
+    border:1px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Impact;
+    font-size:28px;
+    padding:9px 36px;
+    text-decoration:none;
+    text-shadow:-1px -1px 0px #b23e35;
+    left: -30px;
+    right: 0px;
+    position: absolute;
+    width: 60px;
+    margin: auto;
+    text-align: center;
+}
+.myButton:hover {
+    background-color:#eb675e;
+}
+
