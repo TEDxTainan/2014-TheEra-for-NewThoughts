@@ -8,7 +8,7 @@ html, body{
         list-style: none;
     }
 }
-menu{
+nav-menu{
     position: fixed;
     z-index: 99;
 }
@@ -308,6 +308,9 @@ span.pluginButtonLabel{
             margin: auto;
         }
     }
+    nav-menu, share-menu{
+        display: none;
+    }
 }
 .bottom{
     position: fixed;
@@ -320,8 +323,6 @@ span.pluginButtonLabel{
 .bottom.active{
     background: linear-gradient(to top,#fff 8%,#FFF,rgba(243, 243, 243, 0) 100%);
 }
-
-
 .myButton {
     -moz-box-shadow:inset 5px 45px 13px -14px #e67a73;
     -webkit-box-shadow:inset 5px 45px 13px -14px #e67a73;
