@@ -267,7 +267,10 @@ span.pluginButtonLabel {
     left: 14px;
     top: 0;
     font-size: 14px;
-    width: 68px; } }
+    width: 68px; }
+
+  #menu li {
+    display: none; } }
 .bottom {
   position: fixed;
   width: 100%;
@@ -316,12 +319,13 @@ nav-menu .myButton {
 .speaker-content {
   width: 50%;
   position: absolute;
+  box-shadow: 0px 5px 5px rgba(126, 123, 123, 0.44);
+  border: 1px solid #BBBABA;
   margin: auto;
   left: 0px;
   right: 0px;
   height: 450px;
-  width: 60%;
-  box-shadow: 0px 3px 3px rgba(140, 140, 140, 0.54); }
+  width: 60%; }
   .speaker-content .speaker-img {
     position: relative;
     width: 28%;
@@ -334,12 +338,17 @@ nav-menu .myButton {
     height: inherit;
     position: relative;
     float: right;
-    background: #E5E5E5; }
+    background: #F2F2F2;
+    font-size: 18px; }
     .speaker-content .speaker-brief p {
       width: 80%;
       margin: auto;
       top: 30px;
       position: relative; }
+    .speaker-content .speaker-brief h2 {
+      padding-left: 50px;
+      color: #7CC1C9;
+      font-weight: 600; }
   .speaker-content .close-button {
     float: right;
     position: absolute;

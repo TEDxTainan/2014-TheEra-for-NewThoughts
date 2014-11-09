@@ -1,8 +1,12 @@
+'use strict'
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
-/*app.config(function($locationProvider, $rootScopeProvider){
-        $locationProvider.html5Mode(true).hashPrefix('!');
-        $rootScopeProvider.digestTtl(20);
-  });*/
+app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
+  //$locationProvider.html5Mode({requireBase:true});
+}]);
+app.run(function($location){
+  $location.url('home');
+});
+
 app.run(function($FB) {
   $FB.init('164546407087109');
 });
@@ -24,8 +28,14 @@ app.directive('navMenu', function() {
         }];
         this.image = this.images[0];
         this.toggleImg = function() {
-          this.index = this.index == 1 ? 0 : 1;
-          this.image = this.images[this.index];
+          if(this.isHome()){
+            this.index = this.index == 1 ? 0 : 1;
+            this.image = this.images[this.index];
+          }
+          else{
+            this.gotoAnchor(1);
+            this.image = this.images[2];
+          }
         };
         this.isSelect = function() {
           return (this.image === this.images[1]) || (this.image === 
@@ -42,9 +52,13 @@ app.directive('navMenu', function() {
           return active;
         }
         this.isHome = function() {
-            var pos = $location.path();
-            return pos === "" || pos.indexOf('home') != -1;
-          };
+          var pos = $location.path();
+          var result = pos === "" || pos === "/home";
+          if(!result && this.image != this.images[1]){
+            this.image = this.images[1];
+          }
+          return  result;
+        };
       },
       controllerAs: 'nav'
     };
@@ -65,7 +79,6 @@ app.directive('shareMenu', function() {
       this.image = this.images[0]
       this.isOpen = false;
       this.toggle = function() {
-        console.log(this.isOpen);
         this.isOpen = this.isOpen ? false : true;
       }
     },
@@ -84,7 +97,7 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
         theme.section2 = response.section2;
         theme.section3 = response.section3;
       }).error(function(data, status, headers, config) {
-      console.log(status);
+        console.log(status);
     });
 
     this.isSubtheme = function() {
@@ -92,7 +105,7 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
       return pos.indexOf('section') != -1;
     };
     this.getSpeakers = function() {
-      var section = $location.path()
+      var section = $location.path();
       if (section === '/section1') {
         return this.section1;
       } else if (section === '/section2') {
@@ -115,7 +128,6 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     this.closeWindow = function() {
       this.click = false; 
     };
-
   }
 ]);
 app.directive('countDown', function(){
