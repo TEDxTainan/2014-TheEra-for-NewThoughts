@@ -3,7 +3,7 @@
   <a href="http://www.accupass.com/go/tedxtainan2014" class="myButton" ng-show="!nav.isHome()">前往購票</a>
 </div>
 
-<ul id="menu" ng-class="{ active: nav.isSelect() }" ng-show="nav.isSelect()">
+<ul id="menu" ng-class="{ active: nav.isSelect() || (!nav.isHome()) }" ng-show="nav.isSelect() || (!nav.isHome())">
   <li  ng-class="{ active: nav.isAnchor('/brief') }">
     <a href="#" onclick="return false;" ng-mouseover="nav.gotoAnchor(2)">新思潮 簡介</a>
   </li>
