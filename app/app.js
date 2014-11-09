@@ -1,10 +1,8 @@
 'use strict'
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
-app.config(['$locationProvider', '$rootScopeProvider', function($locationProvider, $rootScopeProvider){
-    console.log(22);
-    //$locationProvider.html5Mode(true).hashPrefix('#');
-    console.log(11);
-  }]);
+app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
+}]);
+
 app.run(function($FB) {
   $FB.init('164546407087109');
 });
@@ -46,12 +44,12 @@ app.directive('navMenu', function() {
           $.fn.fullpage.moveTo(x);
         };
         this.isAnchor = function(viewLocation) {
-          var active = (viewLocation === $location.hash());
+          var active = (viewLocation === $location.path());
           return active;
         }
         this.isHome = function() {
-          var pos = $location.hash();
-          var result = pos === "" || pos === "home";
+          var pos = $location.path();
+          var result = pos === "" || pos === "/home";
           if(!result && this.image != this.images[1]){
             this.image = this.images[1];
           }
@@ -77,7 +75,6 @@ app.directive('shareMenu', function() {
       this.image = this.images[0]
       this.isOpen = false;
       this.toggle = function() {
-        console.log(this.isOpen);
         this.isOpen = this.isOpen ? false : true;
       }
     },
@@ -100,17 +97,16 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     });
 
     this.isSubtheme = function() {
-      var pos = $location.hash();
-      console.log(pos);
+      var pos = $location.path();
       return pos.indexOf('section') != -1;
     };
     this.getSpeakers = function() {
-      var section = $location.hash();
-      if (section === 'section1') {
+      var section = $location.path();
+      if (section === '/section1') {
         return this.section1;
-      } else if (section === 'section2') {
+      } else if (section === '/section2') {
         return this.section2;
-      } else if (section === 'section3') {
+      } else if (section === '/section3') {
         return this.section3;
       } else {
         return null;
@@ -119,10 +115,10 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     this.updateSpeaker = function(speaker) {
       this.speaker = speaker;
       this.click = true;
-      this.viewLocation = $location.hash();
+      this.viewLocation = $location.path();
     };
     this.isClick = function() {
-      var active = (this.viewLocation === $location.hash());
+      var active = (this.viewLocation === $location.path());
       return this.click && active && (this.speaker.name !== "");
     }
     this.closeWindow = function() {
