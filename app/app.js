@@ -37,13 +37,13 @@ app.directive('navMenu', function() {
           $.fn.fullpage.moveTo(x);
         };
         this.isAnchor = function(viewLocation) {
-          var active = (viewLocation === $location.path());
+          var active = (viewLocation === $location.hash());
           return active;
         }
         this.isHome = function() {
-            var pos = $location.path();
-            return pos === "" || pos.indexOf('home') != -1;
-          };
+          var pos = $location.hash();
+          return pos === "" || pos.indexOf('home') != -1;
+        };
       },
       controllerAs: 'nav'
     };
@@ -87,16 +87,16 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     });
 
     this.isSubtheme = function() {
-      var pos = $location.path();
+      var pos = $location.hash();
       return pos.indexOf('section') != -1;
     };
     this.getSpeakers = function() {
-      var section = $location.path()
-      if (section === '/section1') {
+      var section = $location.hash();
+      if (section === 'section1') {
         return this.section1;
-      } else if (section === '/section2') {
+      } else if (section === 'section2') {
         return this.section2;
-      } else if (section === '/section3') {
+      } else if (section === 'section3') {
         return this.section3;
       } else {
         return null;
@@ -105,10 +105,10 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     this.updateSpeaker = function(speaker) {
       this.speaker = speaker;
       this.click = true;
-      this.viewLocation = $location.path();
+      this.viewLocation = $location.hash();
     };
     this.isClick = function() {
-      var active = (this.viewLocation === $location.path());
+      var active = (this.viewLocation === $location.hash());
       return this.click && active && (this.speaker.name !== "");
     }
     this.closeWindow = function() {
