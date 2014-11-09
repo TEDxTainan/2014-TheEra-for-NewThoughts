@@ -90,9 +90,11 @@ ul#share_menu.active {
   height: inherit;
   position: relative; }
   #section1 .content .logo {
-    left: 43%;
     position: relative;
-    width: 12%; }
+    width: 45%;
+    left: 27%;
+    right: 0;
+    margin: auto; }
   #section1 .content h1 {
     position: relative;
     font-size: 24px;
@@ -198,7 +200,7 @@ span.pluginButtonLabel {
   .time #day, .time #hour, .time #min, .time #sec {
     letter-spacing: 0em; }
   .time #section1 .logo {
-    width: 18%; }
+    width: 30%; }
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
   #section1 {
@@ -208,7 +210,8 @@ span.pluginButtonLabel {
       left: 19%;
    }*/
   #section1 .content .logo {
-    width: 14%; } }
+    width: 50%;
+    left: 24%; } }
 @media screen and (max-width: 640px) and (min-width: 100px) {
   #section1 {
     background-position-y: 300px; }
@@ -233,8 +236,9 @@ span.pluginButtonLabel {
     position: absolute;
     top: 30px; }
     #section1 .content .logo {
-      width: 22%;
-      left: 40%; }
+      width: 100%;
+      left: 0;
+      right: 0; }
     #section1 .content h1 {
       font-size: 16px; }
 
@@ -248,7 +252,7 @@ span.pluginButtonLabel {
     top: 0px;
     top: -40px; }
     .speaker_thumb img {
-      width: 60%; }
+      width: 50%; }
 
   #section2 .content img, .back {
     display: none; }
@@ -256,8 +260,14 @@ span.pluginButtonLabel {
   #section3 img, #section4 img, #section5 img {
     margin: auto; }
 
-  nav-menu, share-menu {
-    display: none; } }
+  .menu-icon img, share-menu {
+    display: none; }
+
+  .menu-icon .myButton {
+    left: 14px;
+    top: 0;
+    font-size: 14px;
+    width: 68px; } }
 .bottom {
   position: fixed;
   width: 100%;
@@ -298,7 +308,7 @@ span.pluginButtonLabel {
 nav-menu .myButton {
   width: 80px;
   font-size: 16px;
-  left: 60px;
+  left: 55px;
   top: 3px;
   padding: 8px;
   position: relative; }
