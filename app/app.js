@@ -1,7 +1,7 @@
 'use strict'
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
 app.config(function($locationProvider, $rootScopeProvider){
-        $locationProvider.html5Mode(true).hashPrefix('!');
+      //$locationProvider.html5Mode(true).hashPrefix('!');
   });
 app.run(function($FB) {
   $FB.init('164546407087109');
@@ -38,11 +38,11 @@ app.directive('navMenu', function() {
           $.fn.fullpage.moveTo(x);
         };
         this.isAnchor = function(viewLocation) {
-          var active = (viewLocation === $location.hash());
+          var active = (viewLocation === $location.path());
           return active;
         }
         this.isHome = function() {
-          var pos = $location.hash();
+          var pos = $location.path();
           console.log(pos);
           return pos === "" || pos.indexOf('home') != -1;
         };
@@ -89,11 +89,11 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     });
 
     this.isSubtheme = function() {
-      var pos = $location.hash();
+      var pos = $location.path();
       return pos.indexOf('section') != -1;
     };
     this.getSpeakers = function() {
-      var section = $location.hash();
+      var section = $location.path();
       if (section === 'section1') {
         return this.section1;
       } else if (section === 'section2') {
@@ -107,10 +107,10 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     this.updateSpeaker = function(speaker) {
       this.speaker = speaker;
       this.click = true;
-      this.viewLocation = $location.hash();
+      this.viewLocation = $location.path();
     };
     this.isClick = function() {
-      var active = (this.viewLocation === $location.hash());
+      var active = (this.viewLocation === $location.path());
       return this.click && active && (this.speaker.name !== "");
     }
     this.closeWindow = function() {
