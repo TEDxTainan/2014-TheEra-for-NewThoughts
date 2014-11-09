@@ -2,7 +2,7 @@
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
 app.config(['$locationProvider', '$rootScopeProvider', function($locationProvider, $rootScopeProvider){
     console.log(22);
-    $locationProvider.html5Mode(true).hashPrefix('#');
+    //$locationProvider.html5Mode(true).hashPrefix('#');
     console.log(11);
   }]);
 app.run(function($FB) {
