@@ -2,7 +2,7 @@
     "section1": [
         {
             "id": 0,
-            "name": "",
+            "name": "name",
             "brief": "test",
             "image": {
                 "thumb": "assets/img/unknown_speaker.svg",

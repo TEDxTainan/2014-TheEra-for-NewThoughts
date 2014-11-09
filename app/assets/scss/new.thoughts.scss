@@ -1,5 +1,5 @@
 html, body{
-    font-family: 'Noto Sans', 'sans-serif';
+    font-family: 'Noto Sans', 'sans-serif', 'Microsoft Jhenghei';
     a{
        text-decoration: blink;
        font-size: 14px;
@@ -8,7 +8,7 @@ html, body{
         list-style: none;
     }
 }
-menu{
+nav-menu{
     position: fixed;
     z-index: 99;
 }
@@ -64,6 +64,7 @@ ul#menu.active{
     bottom: -5px;
     width: 20px;
     z-index: 99;
+    right: 4%;
 }
 #share_menu{
     display: none;
@@ -130,7 +131,7 @@ ul#share_menu.active{
 #section2{
     .content img{
         position: absolute;
-        left: 79%;
+        left: 75%;
         width: 183px;
     }
 }
@@ -308,6 +309,9 @@ span.pluginButtonLabel{
             margin: auto;
         }
     }
+    nav-menu, share-menu{
+        display: none;
+    }
 }
 .bottom{
     position: fixed;
@@ -319,4 +323,77 @@ span.pluginButtonLabel{
 }
 .bottom.active{
     background: linear-gradient(to top,#fff 8%,#FFF,rgba(243, 243, 243, 0) 100%);
+}
+.myButton {
+    -moz-box-shadow:inset 5px 45px 13px -14px #e67a73;
+    -webkit-box-shadow:inset 5px 45px 13px -14px #e67a73;
+    box-shadow:inset 5px 45px 13px -14px #e67a73;
+    background-color:#e4685d;
+    -moz-border-radius:13px;
+    -webkit-border-radius:13px;
+    border-radius:13px;
+    border:1px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:28px;
+    padding:9px 36px;
+    text-decoration:none;
+    text-shadow:-1px -1px 0px #b23e35;
+    left: -30px;
+    right: 0px;
+    position: absolute;
+    width: 60px;
+    margin: auto;
+    text-align: center;
+}
+.myButton:hover {
+    background-color:#eb675e;
+}
+nav-menu{
+    .myButton{
+        width: 80px;
+        font-size: 16px;
+        left: 60px;
+        top: 3px;
+        padding: 8px;
+        position: relative;
+    }
+}
+
+.speaker-content{
+    width: 50%;
+    position: absolute;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    height: 450px;
+    width: 60%;
+    box-shadow: 0px 3px 3px rgba(140, 140, 140, 0.54);
+    .speaker-img{
+        position: relative;
+        width: 28%;
+        float: left;
+        height: inherit;
+        background-color: #F05F6D;
+        display: flex;
+    }
+    .speaker-brief{
+        width: 72%;
+        height: inherit;
+        position: relative;
+        float: right;
+        background: #E5E5E5;
+        p{
+            width: 80%;
+            margin: auto;
+            top: 30px;
+            position: relative;
+        }
+    }
+    .close-button{
+        float: right;
+        position: absolute;
+        right: -60px;
+    }
 }

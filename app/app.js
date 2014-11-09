@@ -41,6 +41,10 @@ app.directive('navMenu', function() {
           var active = (viewLocation === $location.path());
           return active;
         }
+        this.isHome = function() {
+            var pos = $location.path();
+            return pos === "" || pos.indexOf('home') != -1;
+          };
       },
       controllerAs: 'nav'
     };
@@ -70,39 +74,48 @@ app.directive('shareMenu', function() {
 });
 app.controller('ThemeController', ['$scope', '$location', '$http',
   function($scope, $location, $http) {
-    $http.get("https://rawgit.com/TEDxTainan/2014-TheEra-for-NewThoughts/test/app/speakers/speakers.json").success(
+  
+    this.speaker = null;
+    var theme = this;
+
+    $http.get("speakers/speakers.json").success(
       function(response) {
-        $scope.section1 = response.section1;
-        $scope.section2 = response.section2;
-        $scope.section3 = response.section3;
+        theme.section1 = response.section1;
+        theme.section2 = response.section2;
+        theme.section3 = response.section3;
       }).error(function(data, status, headers, config) {
       console.log(status);
     });
-    $scope.isSubtheme = function() {
+
+    this.isSubtheme = function() {
       var pos = $location.path();
       return pos.indexOf('section') != -1;
     };
-    $scope.getSpeakers = function() {
+    this.getSpeakers = function() {
       var section = $location.path()
       if (section === '/section1') {
-        return $scope.section1;
+        return this.section1;
       } else if (section === '/section2') {
-        return $scope.section2;
+        return this.section2;
       } else if (section === '/section3') {
-        return $scope.section3;
+        return this.section3;
       } else {
         return null;
       }
-      $scope.isClick = false;
     };
-    $scope.showInformation = function(speaker) {
-      $scope.speakerImage = speaker.image;
-      $scope.speakerBrief = speaker.brief;
-      $scope.isClick = true;
+    this.updateSpeaker = function(speaker) {
+      this.speaker = speaker;
+      this.click = true;
+      this.viewLocation = $location.path();
     };
-    $scope.isClick = function() {
-      return $scope.isClick;
+    this.isClick = function() {
+      var active = (this.viewLocation === $location.path());
+      return this.click && active && (this.speaker.name !== "");
     }
+    this.closeWindow = function() {
+      this.click = false; 
+    };
+
   }
 ]);
 app.directive('countDown', function(){
