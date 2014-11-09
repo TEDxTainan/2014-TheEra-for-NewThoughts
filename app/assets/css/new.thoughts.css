@@ -267,7 +267,10 @@ span.pluginButtonLabel {
     left: 14px;
     top: 0;
     font-size: 14px;
-    width: 68px; } }
+    width: 68px; }
+
+  #menu li {
+    display: none; } }
 .bottom {
   position: fixed;
   width: 100%;
