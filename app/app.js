@@ -1,7 +1,11 @@
 'use strict'
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
 app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
+  //$locationProvider.html5Mode({requireBase:true});
 }]);
+app.run(function($location){
+  $location.url('home');
+});
 
 app.run(function($FB) {
   $FB.init('164546407087109');
@@ -124,7 +128,6 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     this.closeWindow = function() {
       this.click = false; 
     };
-
   }
 ]);
 app.directive('countDown', function(){
