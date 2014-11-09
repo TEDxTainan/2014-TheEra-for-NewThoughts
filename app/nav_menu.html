@@ -1,0 +1,22 @@
+<div class="menu-icon">
+  <img ng-click="nav.toggleImg()" ng-src="{{nav.image.svg}}" />
+  <a href="http://www.accupass.com/go/tedxtainan2014" class="myButton" ng-show="!nav.isHome()">前往購票</a>
+</div>
+
+<ul id="menu" ng-class="{ active: nav.isSelect() }" ng-show="nav.isSelect()">
+  <li  ng-class="{ active: nav.isAnchor('/brief') }">
+    <a href="#" onclick="return false;" ng-mouseover="nav.gotoAnchor(2)">新思潮 簡介</a>
+  </li>
+  <li data-menuanchor="secondPage" ng-class="{ active: nav.isAnchor('/section1') }">
+    <a href="#" onclick="return false;" ng-mouseover="nav.gotoAnchor(3)">新潮湧起 , 創造</a>
+  </li>
+  <li data-menuanchor="3rdPage" ng-class="{ active: nav.isAnchor('/section2') }">
+    <a href="#" onclick="return false;" ng-mouseover="nav.gotoAnchor(4)">草根演繹 , 改變</a>
+  </li>
+  <li data-menuanchor="4thPage" ng-class="{ active: nav.isAnchor('/section3') }">
+    <a href="#" onclick="return false;" ng-mouseover="nav.gotoAnchor(5)">跨越破碎 , 前行</a>
+  </li>
+  <!--<li data-menuanchor="lastPage" ng-class="{ active: nav.isAnchor('/participate') }">
+    <a href="#lastPage" onclick="return false;" ng-mouseover="nav.gotoAnchor(6)">如何參加新思潮</a>
+    </li>!-->
+</ul>

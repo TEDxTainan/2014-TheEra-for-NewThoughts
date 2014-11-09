@@ -1,125 +1,126 @@
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
-
-  /*app.config(function($locationProvider, $rootScopeProvider){
+/*app.config(function($locationProvider, $rootScopeProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
         $rootScopeProvider.digestTtl(20);
   });*/
-
- app.run(function($FB){
+app.run(function($FB) {
   $FB.init('164546407087109');
- });
-
- app.controller('MenuController', ['$scope', '$location', '$anchorScroll', 
-     function($scope, $location, $anchorScroll){
-  $scope.images = [
-        {
-          svg: '//www.tedxtainan.com/app/assets/img/unfold.svg', 
+});
+app.directive('navMenu', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'nav_menu.html',
+      controller: function($scope, $location, $anchorScroll) {
+        this.index = 0;
+        this.images = [{
+          svg: '//www.tedxtainan.com/app/assets/img/unfold.svg',
           png: '//www.tedxtainan.com/app/assets/img/unfold.png'
-        },
-        {
-          svg: '//www.tedxtainan.com/app/assets/img/unselect.svg', 
+        }, {
+          svg: '//www.tedxtainan.com/app/assets/img/unselect.svg',
           png: '//www.tedxtainan.com/app/assets/img/unselect.png'
-        },
-        {
-          svg: '//www.tedxtainan.com/app/assets/img/select.svg', 
+        }, {
+          svg: '//www.tedxtainan.com/app/assets/img/select.svg',
           png: '//www.tedxtainan.com/app/assets/img/select.png'
         }];
-  this.index = 0;
-  var change = false;
-  $scope.image = $scope.images[0];
-  $scope.toggleImg = function(){
-    this.index = this.index == 1 ? 0 : 1;
-    $scope.image = $scope.images[this.index];
+        this.image = this.images[0];
+        this.toggleImg = function() {
+          this.index = this.index == 1 ? 0 : 1;
+          this.image = this.images[this.index];
+        };
+        this.isSelect = function() {
+          return (this.image === this.images[1]) || (this.image === 
+            this.images[2]);
+        };
+        this.gotoAnchor = function(x) {
+          if (x != 1) {
+            this.image = this.images[2];
+          }
+          $.fn.fullpage.moveTo(x);
+        };
+        this.isAnchor = function(viewLocation) {
+          var active = (viewLocation === $location.path());
+          return active;
+        }
+        this.isHome = function() {
+            var pos = $location.path();
+            return pos === "" || pos.indexOf('home') != -1;
+          };
+      },
+      controllerAs: 'nav'
+    };
+  });
+
+app.directive('shareMenu', function() {
+  return{
+    restrict: 'E',
+    templateUrl: 'share_menu.html',
+    controller: function($scope) {
+      this.images = [{
+        svg: '//www.tedxtainan.com/app/assets/img/unclickbutton.svg',
+        png: '//www.tedxtainan.com/app/assets/img/unclickbutton.png'
+      }, {
+        svg: '//www.tedxtainan.com/app/assets/img/clickbutton.svg',
+        png: '//www.tedxtainan.com/app/assets/img/clickbutton.png'
+      }];
+      this.image = this.images[0]
+      this.isOpen = false;
+      this.toggle = function() {
+        console.log(this.isOpen);
+        this.isOpen = this.isOpen ? false : true;
+      }
+    },
+    controllerAs: 'share'
   };
-  $scope.isSelect = function(){
-    change = ($scope.image === $scope.images[1]) || ($scope.image === $scope.images[2]); 
-    return change;
-  };
+});
+app.controller('ThemeController', ['$scope', '$location', '$http',
+  function($scope, $location, $http) {
   
-  $scope.gotoAnchor = function(x){
-    if(x != 1){
-      $scope.image = $scope.images[2];
-    }
-    $.fn.fullpage.moveTo(x);
-  };
+    this.speaker = null;
+    var theme = this;
 
-  $scope.isAnchor = function(viewLocation) {
-    var active = (viewLocation === $location.path());
-			var index = $(this).parent().index();
-    return active;
+    $http.get("speakers/speakers.json").success(
+      function(response) {
+        theme.section1 = response.section1;
+        theme.section2 = response.section2;
+        theme.section3 = response.section3;
+      }).error(function(data, status, headers, config) {
+      console.log(status);
+    });
+
+    this.isSubtheme = function() {
+      var pos = $location.path();
+      return pos.indexOf('section') != -1;
+    };
+    this.getSpeakers = function() {
+      var section = $location.path()
+      if (section === '/section1') {
+        return this.section1;
+      } else if (section === '/section2') {
+        return this.section2;
+      } else if (section === '/section3') {
+        return this.section3;
+      } else {
+        return null;
+      }
+    };
+    this.updateSpeaker = function(speaker) {
+      this.speaker = speaker;
+      this.click = true;
+      this.viewLocation = $location.path();
+    };
+    this.isClick = function() {
+      var active = (this.viewLocation === $location.path());
+      return this.click && active && (this.speaker.name !== "");
+    }
+    this.closeWindow = function() {
+      this.click = false; 
+    };
+
   }
-}]);
-
-app.controller('ShareController', ['$scope', 
-  function($scope){
-    $scope.images = [
-              {
-                svg: '//www.tedxtainan.com/app/assets/img/unclickbutton.svg', 
-                png: '//www.tedxtainan.com/app/assets/img/unclickbutton.png'
-              },
-              {
-                svg: '//www.tedxtainan.com/app/assets/img/clickbutton.svg', 
-                png: '//www.tedxtainan.com/app/assets/img/clickbutton.png'
-              }];
-    $scope.image = $scope.images[0]
-
-    this.isOpen = false;
-
-    $scope.toggle = function(){
-      this.isOpen = this.isOpen? false : true;
-    }
-
-  }]);
-
-
-  app.controller('ThemeController', ['$scope', '$location', function($scope, $location){
-      
-    $scope.speakers = [{
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    },
-                    {
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    },{
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    },{
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    },{
-                      image: {
-                          full: '',
-                          thumb: 'assets/img/unknown_speaker.svg'
-                      },
-                      intro: {
-                             
-                      }
-                    }
-                  ];
-
-      $scope.isSubtheme = function(){
-        var pos = $location.path();
-        return pos.indexOf('section') != -1;      
-      };
-  }]);
+]);
+app.directive('countDown', function(){
+  return {
+      restrict: 'E',
+      templateUrl: 'count_down.html'
+  };
+});
