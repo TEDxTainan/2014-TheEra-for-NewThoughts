@@ -1,8 +1,7 @@
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
-/*app.config(function($locationProvider, $rootScopeProvider){
+app.config(function($locationProvider, $rootScopeProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
-        $rootScopeProvider.digestTtl(20);
-  });*/
+  });
 app.run(function($FB) {
   $FB.init('164546407087109');
 });
