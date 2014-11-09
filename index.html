@@ -68,37 +68,77 @@ Template Name: 2014 The Era for New Thoughts
 
             <section class="section" id="section3">
             <div class="content">
-              <div class="about_theme" ng-hide="theme.isClick">
+              <div class="about_theme" ng-hide="theme.isClick()">
                 <div class="title">
                   <img src="assets/img/theme1-2.png"></img>
                 </div><p>
                 這是一波不斷推進的城市浪潮，也是一群浪頭先鋒者，帶著堅毅的態度，勇敢衝撞現狀。先鋒開拓格局，讓我們得以最遼闊的視野，感受能量的衝擊與創造的脈動。
                 </p>
+              </div>
+
+                <div ng-show="theme.isClick()" class="speaker-content">
+                  <span class="speaker-img">
+                    {{theme.speaker.image.full}}
+                  </span>
+                  <span class="speaker-brief">
+                    <p>
+                    {{theme.speaker.brief}}
+                    </p>
+                  </span>
+                  <div class="close-button" ng-click="theme.closeWindow()"><img src="assets/img/unclickbutton.svg"></img></div>
                 </div>
-                <div ng-show="theme.isClick">
-                  {{theme.speakerBrief}}
-                </div>
+
               </div>
             </section>
 
              <section class="section" id="section4">
              <div class="content">
+              <div class="about_theme" ng-hide="theme.isClick()">
                <div class="title">
                   <img src="assets/img/theme2-2.png"></img>
                 </div><p>
                 在府城有一群草根默默深植，讓我們開始學會溫厚與踏實。在不斷的累積後，台南人沈澱了深厚的文化底藴，並在看似平凡的生活中，看見曙光，然後邁向期待。
                 </p>
+                </div>
+                
+               <div ng-show="theme.isClick()" class="speaker-content">
+                  <span class="speaker-img">
+                    {{theme.speaker.image.full}}
+                  </span>
+                  <span class="speaker-brief">
+                    <p>
+                    {{theme.speaker.brief}}
+                    </p>
+                  </span>
+                  <div class="close-button" ng-click="theme.closeWindow()"><img src="assets/img/unclickbutton.svg"></img></div>
+                </div>
+
               </div>
               </section>
 
               <section class="section" id="section5">
                 <div class="content">
+                <div class="about_theme" ng-hide="theme.isClick()">
                   <div class="title">
                     <img src="assets/img/theme3-2.png"></img>
                   </div><p>
-                    動盪的時代，總是充斥瘡疤。這些接踵而至的事件，帶來哀慟的破碎。卻總有一群可貴的社會力量，腳踩瓦礫堆，用行動帶領我們跨越、看見裂縫外的暖陽。
+                  動盪的時代，總是充斥瘡疤。這些接踵而至的事件，帶來哀慟的破碎。卻總有一群可貴的社會力量，腳踩瓦礫堆，用行動帶領我們跨越、看見裂縫外的暖陽。
                       </p>
+                    </div>
+
+                  <div ng-show="theme.isClick()" class="speaker-content">
+                    <span class="speaker-img">
+                      {{theme.speaker.image.full}}
+                    </span>
+                    <span class="speaker-brief">
+                      <p>
+                      {{theme.speaker.brief}}
+                      </p>
+                    </span>
+                  <div class="close-button" ng-click="theme.closeWindow()"><img src="assets/img/unclickbutton.svg"></img></div>
                   </div>
+
+                </div>
              </section>
              
              <section class="section" id="section6">
@@ -107,7 +147,7 @@ Template Name: 2014 The Era for New Thoughts
 
         <div class="bottom" ng-class="{ active: theme.isSubtheme()}">
               <div ng-repeat="speaker in theme.getSpeakers()" class="speaker_thumb" ng-show="theme.isSubtheme()">
-                <img ng-src="{{speaker.image.thumb}}" ng-mouseover="theme.showInformation(speaker)"/>
+                <img ng-src="{{speaker.image.thumb}}" ng-click="theme.updateSpeaker(speaker)"/>
               </div>
               <img class="tedxtainan" src="assets/img/white.png"/>
         </div>
