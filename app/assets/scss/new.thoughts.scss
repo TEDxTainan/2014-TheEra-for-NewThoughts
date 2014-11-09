@@ -131,7 +131,7 @@ ul#share_menu.active{
 #section2{
     .content img{
         position: absolute;
-        left: 79%;
+        left: 75%;
         width: 183px;
     }
 }
@@ -349,6 +349,16 @@ span.pluginButtonLabel{
 }
 .myButton:hover {
     background-color:#eb675e;
+}
+nav-menu{
+    .myButton{
+        width: 80px;
+        font-size: 16px;
+        left: 60px;
+        top: 3px;
+        padding: 8px;
+        position: relative;
+    }
 }
 
 .speaker-content{
