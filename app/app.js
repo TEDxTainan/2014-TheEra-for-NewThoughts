@@ -1,3 +1,4 @@
+'use strict'
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
 app.config(function($locationProvider, $rootScopeProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
@@ -42,6 +43,7 @@ app.directive('navMenu', function() {
         }
         this.isHome = function() {
           var pos = $location.hash();
+          console.log(pos);
           return pos === "" || pos.indexOf('home') != -1;
         };
       },

@@ -370,7 +370,6 @@ nav-menu{
         position: relative;
     }
 }
-
 .speaker-content{
     width: 50%;
     position: absolute;
@@ -381,7 +380,6 @@ nav-menu{
     right: 0px;
     height: 450px;
     width: 60%;
-    box-shadow: 0px 3px 3px rgba(140, 140, 140, 0.54);
     .speaker-img{
         position: relative;
         width: 28%;
@@ -396,11 +394,17 @@ nav-menu{
         position: relative;
         float: right;
         background: #F2F2F2;
+        font-size: 18px;
         p{
             width: 80%;
             margin: auto;
             top: 30px;
             position: relative;
+        }
+        h2{
+            padding-left: 50px;
+            color: #7CC1C9;
+            font-weight: 600;
         }
     }
     .close-button{

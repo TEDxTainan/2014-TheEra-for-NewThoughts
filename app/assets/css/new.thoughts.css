@@ -322,8 +322,7 @@ nav-menu .myButton {
   left: 0px;
   right: 0px;
   height: 450px;
-  width: 60%;
-  box-shadow: 0px 3px 3px rgba(140, 140, 140, 0.54); }
+  width: 60%; }
   .speaker-content .speaker-img {
     position: relative;
     width: 28%;
@@ -336,12 +335,17 @@ nav-menu .myButton {
     height: inherit;
     position: relative;
     float: right;
-    background: #F2F2F2; }
+    background: #F2F2F2;
+    font-size: 18px; }
     .speaker-content .speaker-brief p {
       width: 80%;
       margin: auto;
       top: 30px;
       position: relative; }
+    .speaker-content .speaker-brief h2 {
+      padding-left: 50px;
+      color: #7CC1C9;
+      font-weight: 600; }
   .speaker-content .close-button {
     float: right;
     position: absolute;
