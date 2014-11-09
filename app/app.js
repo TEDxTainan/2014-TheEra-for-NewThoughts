@@ -1,7 +1,9 @@
 'use strict'
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
 app.config(function($locationProvider, $rootScopeProvider){
-      //$locationProvider.html5Mode(true).hashPrefix('!');
+    console.log(22);
+    $locationProvider.html5Mode(true).hashPrefix('#');
+    console.log(11);
   });
 app.run(function($FB) {
   $FB.init('164546407087109');
@@ -24,8 +26,14 @@ app.directive('navMenu', function() {
         }];
         this.image = this.images[0];
         this.toggleImg = function() {
-          this.index = this.index == 1 ? 0 : 1;
-          this.image = this.images[this.index];
+          if(this.isHome()){
+            this.index = this.index == 1 ? 0 : 1;
+            this.image = this.images[this.index];
+          }
+          else{
+            this.gotoAnchor(1);
+            this.image = this.images[2];
+          }
         };
         this.isSelect = function() {
           return (this.image === this.images[1]) || (this.image === 
@@ -38,13 +46,16 @@ app.directive('navMenu', function() {
           $.fn.fullpage.moveTo(x);
         };
         this.isAnchor = function(viewLocation) {
-          var active = (viewLocation === $location.path());
+          var active = (viewLocation === $location.hash());
           return active;
         }
         this.isHome = function() {
-          var pos = $location.path();
-          console.log(pos);
-          return pos === "" || pos.indexOf('home') != -1;
+          var pos = $location.hash();
+          var result = pos === "" || pos === "home";
+          if(!result && this.image != this.images[1]){
+            this.image = this.images[1];
+          }
+          return  result;
         };
       },
       controllerAs: 'nav'
@@ -85,15 +96,16 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
         theme.section2 = response.section2;
         theme.section3 = response.section3;
       }).error(function(data, status, headers, config) {
-      console.log(status);
+        console.log(status);
     });
 
     this.isSubtheme = function() {
-      var pos = $location.path();
+      var pos = $location.hash();
+      console.log(pos);
       return pos.indexOf('section') != -1;
     };
     this.getSpeakers = function() {
-      var section = $location.path();
+      var section = $location.hash();
       if (section === 'section1') {
         return this.section1;
       } else if (section === 'section2') {
@@ -107,10 +119,10 @@ app.controller('ThemeController', ['$scope', '$location', '$http',
     this.updateSpeaker = function(speaker) {
       this.speaker = speaker;
       this.click = true;
-      this.viewLocation = $location.path();
+      this.viewLocation = $location.hash();
     };
     this.isClick = function() {
-      var active = (this.viewLocation === $location.path());
+      var active = (this.viewLocation === $location.hash());
       return this.click && active && (this.speaker.name !== "");
     }
     this.closeWindow = function() {
