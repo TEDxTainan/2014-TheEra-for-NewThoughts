@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
 app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
   //$locationProvider.html5Mode({requireBase:true});
