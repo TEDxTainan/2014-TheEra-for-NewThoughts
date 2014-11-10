@@ -6,8 +6,9 @@
 - Install npm 
 
 ## Compile CSS file
-- First, you should install needed ruby gem (ruby version > 2.0.0)
-    
+
+First, you should install needed ruby gem (ruby version > 2.0.0)
+
     $ bundle install
     $ ./scss.sh
 
