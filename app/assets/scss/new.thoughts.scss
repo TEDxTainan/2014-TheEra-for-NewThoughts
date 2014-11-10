@@ -292,6 +292,8 @@ nav-menu{
         top: 3px;
         padding: 8px;
         position: relative;
+        background-color: #F05F6D;
+        box-shadow: inset 5px 45px 13px -14px #F05F6D;
     }
 }
 .speaker-content{
@@ -304,6 +306,7 @@ nav-menu{
     right: 0px;
     height: 450px;
     width: 60%;
+    margin-top: -26px;
     .speaker-img{
         position: relative;
         width: 28%;
