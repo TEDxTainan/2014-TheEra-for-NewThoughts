@@ -247,85 +247,6 @@ span.pluginButtonLabel{
     }
 
 }
-
-@media screen and (min-width: 640px) and (max-width: 1024px) {
-    #section1{
-        background-position-y: 280px;
-    }
-   /* .countdown{
-       left: 19%;
-    }*/
-    #section1 .content .logo {
-        width: 50%;
-        left: 24%;
-    }
-}
-@media screen and (max-width: 640px) and (min-width: 100px){
-    #section1{
-        background-position-y: 300px;
-    }
-    #section2{
-        font-size: 12px;
-    }
-    .countdown{
-       font-size: 16px;
-       top: 69px;
-       left: 0%;
-       width: 372px;
-    }
-    .time {
-       right: -8%;
-       font-size: 14px;
-    }
-    #section1 .content{ 
-        margin: auto;
-        left: 0;
-        right: 0;
-        position: absolute;
-        top: 30px;
-        .logo {
-            width: 100%;
-            left: 0;
-            right: 0;
-         }
-         h1{
-            font-size: 16px;
-          }
-     }
-    .tedxtainan{
-            left: 0;
-            right: 0;
-            bottom: 0;
-     }
-    .speaker_thumb {
-        left: 10px;
-        top: 0px;
-        top: -40px;
-        img{
-            width: 50%;
-        }
-    }
-    #section2 .content img, .back {
-        display: none;
-    }
-    #section3, #section4, #section5{
-        img{
-            margin: auto;
-        }
-    }
-    .menu-icon img, share-menu{
-        display: none;
-    }
-    .menu-icon .myButton{
-        left: 14px;
-        top: 0;
-        font-size: 14px;
-        width: 68px;
-    }
-    #menu li{
-        display:none;
-    }
-}
 .bottom{
     position: fixed;
     width: 100%;
@@ -414,5 +335,98 @@ nav-menu{
         float: right;
         position: absolute;
         right: -60px;
+    }
+}
+
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+    #section1{
+        background-position-y: 280px;
+    }
+   /* .countdown{
+       left: 19%;
+    }*/
+    #section1 .content .logo {
+        width: 50%;
+        left: 24%;
+    }
+}
+@media screen and (max-width: 640px) and (min-width: 100px){
+    #section1{
+        background-position-y: 300px;
+    }
+    #section2{
+        font-size: 12px;
+    }
+    .countdown{
+       font-size: 16px;
+       top: 69px;
+       left: 0%;
+       width: 372px;
+    }
+    .time {
+       right: -8%;
+       font-size: 14px;
+    }
+    #section1 .content{ 
+        margin: auto;
+        left: 0;
+        right: 0;
+        position: absolute;
+        top: 30px;
+        .logo {
+            width: 100%;
+            left: 0;
+            right: 0;
+         }
+         h1{
+            font-size: 16px;
+          }
+     }
+    .tedxtainan{
+            left: 0;
+            right: 0;
+            bottom: 0;
+     }
+    .speaker_thumb {
+        left: 10px;
+        top: 0px;
+        top: -40px;
+        img{
+            width: 50%;
+        }
+    }
+    #section2 .content img, .back {
+        display: none;
+    }
+    #section3, #section4, #section5{
+        img{
+            margin: auto;
+        }
+    }
+    .menu-icon img, share-menu{
+        display: none;
+    }
+    .menu-icon .myButton{
+        left: 14px;
+        top: 0;
+        font-size: 14px;
+        width: 68px;
+    }
+    #menu li{
+        display:none;
+    }
+    .speaker-content{
+        max-height: 300px;
+        .speaker-img{
+            display: none;
+
+        }
+        .speaker-brief{
+            width: 100%;
+            max-height: 300px;
+            overflow: auto;
+            font-size: 14px;
+        }
     }
 }
