@@ -7,3 +7,4 @@ logs/*
 tmp
 app/assets/css/*.map
 .sass-cache/
+Gemfile.lock
