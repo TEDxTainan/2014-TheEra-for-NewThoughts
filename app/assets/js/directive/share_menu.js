@@ -1,16 +1,19 @@
 (function() {
 
-  var angular = require('angular');
+  module.export = require('angular')
+                    .module('event')
+                    .directive('shareMenu', shareMenuDirective);
 
   var shareMenuController = require('../controller/share_menu');
-
-  module.exports = function() {
-    return {
+  
+  function shareMenuDirective() {
+    var directive = {
       restrict: 'E',
       templateUrl: 'share_menu.html',
       controller: shareMenuController,
       controllerAs: 'share'
     };
+    return directive;
   }
 
 })();
