@@ -1,12 +1,15 @@
 (function() {
+  
+  module.export = require('angular')
+                    .module('event')
+                    .directive('countDown', countDownDirective);
 
-  var angular = require('angular');
-
-  module.exports = function() {
-    return {
+  function countDownDirective() {
+    var directive = {
         restrict: 'E',
         templateUrl: 'count_down.html'
     };
+    return directive;
   }
   
 })();

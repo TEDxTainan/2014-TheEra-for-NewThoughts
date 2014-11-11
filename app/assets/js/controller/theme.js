@@ -1,26 +1,38 @@
 (function() {
   'use strict';
 
-  module.exports = function($scope, $location, $http) {
+  module.exports = require('angular')
+                   .module('event')
+                   .controller('ThemeController', themeController);
+
+  themeController.$inject = ['$scope', '$location', '$http'];
+
+  function themeController($scope, $location, $http) {
     
     this.speaker = null;
     var theme = this;
+    this.isSubtheme = isSubtheme;
+    this.getSpeakers = getSpeakers;
+    this.updateSpeaker = updateSpeaker;
+    this.isClick = isClick;
+    this.closeWindow = closeWindow;
 
-    $http.get("speakers/speakers.json").success(
-      function(response) {
+    $http.get("speakers/speakers.json")
+      .success(function(response) {
         theme.section1 = response.section1;
         theme.section2 = response.section2;
         theme.section3 = response.section3;
-      }).error(function(data, status, headers, config) {
+      })
+      .error(function(data, status, headers, config) {
         console.log(status);
-    });
+      });
 
-    this.isSubtheme = function() {
+    function isSubtheme() {
       var pos = $location.path();
       return pos.indexOf('section') != -1;
     };
 
-    this.getSpeakers = function() {
+    function getSpeakers() {
       var section = $location.path();
       if (section === '/section1') {
         return this.section1;
@@ -33,20 +45,19 @@
       }
     };
 
-    this.updateSpeaker = function(speaker) {
+    function updateSpeaker(speaker) {
       this.speaker = speaker;
       this.click = true;
       this.viewLocation = $location.path();
     };
 
-    this.isClick = function() {
+    function isClick() {
       var active = (this.viewLocation === $location.path());
       return this.click && active && (this.speaker.name !== "");
     }
 
-    this.closeWindow = function() {
+    function closeWindow() {
       this.click = false; 
     };
   }
-
 })();
