@@ -247,6 +247,100 @@ span.pluginButtonLabel{
     }
 
 }
+.bottom{
+    position: fixed;
+    width: 100%;
+    height: 167px;
+    display: block;
+    z-index: 5;
+    bottom: 0px;
+}
+.bottom.active{
+    background: linear-gradient(to top,#fff 8%,#FFF,rgba(243, 243, 243, 0) 100%);
+}
+.myButton {
+    -moz-box-shadow:inset 5px 45px 13px -14px #e67a73;
+    -webkit-box-shadow:inset 5px 45px 13px -14px #e67a73;
+    box-shadow:inset 5px 45px 13px -14px #e67a73;
+    background-color:#e4685d;
+    -moz-border-radius:13px;
+    -webkit-border-radius:13px;
+    border-radius:13px;
+    border:1px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:28px;
+    padding:9px 36px;
+    text-decoration:none;
+    text-shadow:-1px -1px 0px #b23e35;
+    left: -30px;
+    right: 0px;
+    position: absolute;
+    width: 60px;
+    margin: auto;
+    text-align: center;
+}
+.myButton:hover {
+    background-color:#eb675e;
+}
+nav-menu{
+    .myButton{
+        width: 80px;
+        font-size: 16px;
+        left: 55px;
+        top: 3px;
+        padding: 8px;
+        position: relative;
+        background-color: #F05F6D;
+        box-shadow: inset 5px 45px 13px -14px #F05F6D;
+    }
+}
+.speaker-content{
+    width: 50%;
+    position: absolute;
+    box-shadow: 0px 5px 5px rgba(126, 123, 123, 0.44);
+    border: 1px solid #BBBABA;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    height: 450px;
+    width: 60%;
+    margin-top: -26px;
+    .speaker-img{
+        position: relative;
+        width: 28%;
+        float: left;
+        height: inherit;
+        background-color: #F05F6D;
+        display: flex;
+    }
+    .speaker-brief{
+        width: 72%;
+        height: inherit;
+        position: relative;
+        float: right;
+        background: #F2F2F2;
+        font-size: 18px;
+        p{
+            width: 80%;
+            margin: auto;
+            top: 30px;
+            position: relative;
+        }
+        h2{
+            padding-left: 50px;
+            color: #7CC1C9;
+            font-weight: 600;
+        }
+    }
+    .close-button{
+        float: right;
+        position: absolute;
+        right: -60px;
+    }
+}
+
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
     #section1{
@@ -325,94 +419,18 @@ span.pluginButtonLabel{
     #menu li{
         display:none;
     }
-}
-.bottom{
-    position: fixed;
-    width: 100%;
-    height: 167px;
-    display: block;
-    z-index: 5;
-    bottom: 0px;
-}
-.bottom.active{
-    background: linear-gradient(to top,#fff 8%,#FFF,rgba(243, 243, 243, 0) 100%);
-}
-.myButton {
-    -moz-box-shadow:inset 5px 45px 13px -14px #e67a73;
-    -webkit-box-shadow:inset 5px 45px 13px -14px #e67a73;
-    box-shadow:inset 5px 45px 13px -14px #e67a73;
-    background-color:#e4685d;
-    -moz-border-radius:13px;
-    -webkit-border-radius:13px;
-    border-radius:13px;
-    border:1px solid #ffffff;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-size:28px;
-    padding:9px 36px;
-    text-decoration:none;
-    text-shadow:-1px -1px 0px #b23e35;
-    left: -30px;
-    right: 0px;
-    position: absolute;
-    width: 60px;
-    margin: auto;
-    text-align: center;
-}
-.myButton:hover {
-    background-color:#eb675e;
-}
-nav-menu{
-    .myButton{
-        width: 80px;
-        font-size: 16px;
-        left: 55px;
-        top: 3px;
-        padding: 8px;
-        position: relative;
-    }
-}
-.speaker-content{
-    width: 50%;
-    position: absolute;
-    box-shadow: 0px 5px 5px rgba(126, 123, 123, 0.44);
-    border: 1px solid #BBBABA;
-    margin: auto;
-    left: 0px;
-    right: 0px;
-    height: 450px;
-    width: 60%;
-    .speaker-img{
-        position: relative;
-        width: 28%;
-        float: left;
-        height: inherit;
-        background-color: #F05F6D;
-        display: flex;
-    }
-    .speaker-brief{
-        width: 72%;
-        height: inherit;
-        position: relative;
-        float: right;
-        background: #F2F2F2;
-        font-size: 18px;
-        p{
-            width: 80%;
-            margin: auto;
-            top: 30px;
-            position: relative;
+    .speaker-content{
+        max-height: 300px;
+        top: 55px;
+        .speaker-img{
+            display: none;
+
         }
-        h2{
-            padding-left: 50px;
-            color: #7CC1C9;
-            font-weight: 600;
+        .speaker-brief{
+            width: 100%;
+            max-height: 300px;
+            overflow: auto;
+            font-size: 14px;
         }
-    }
-    .close-button{
-        float: right;
-        position: absolute;
-        right: -60px;
     }
 }

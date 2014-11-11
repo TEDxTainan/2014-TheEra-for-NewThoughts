@@ -16,7 +16,24 @@
     "karma": "~0.10",
     "karma-junit-reporter": "^0.2.2",
     "protractor": "^1.1.1",
-    "shelljs": "^0.2.6"
+    "shelljs": "^0.2.6",
+    "browserify-shim": "^3.8.0"
+  },
+  "browserify":{
+    "transform": [ "browserify-shim" ]
+  },
+  "browser":{
+    "angular": "./app/vendors/angular/angular.js",
+    "angular-route": "./app/vendors/angular-route/angular-route.js"
+  },
+  "browserify-shim": {
+    "angular": "angular",
+    "angular-route": {
+      "exports": "angular.module('ngRoute')",
+      "depends": [
+        "angular"
+      ]
+    }
   },
   "scripts": {
     "prestart": "npm install",
