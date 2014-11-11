@@ -30,7 +30,7 @@
     function isSubtheme() {
       var pos = $location.path();
       return pos.indexOf('section') != -1;
-    };
+    }
 
     function getSpeakers() {
       var section = $location.path();
@@ -43,13 +43,13 @@
       } else {
         return null;
       }
-    };
+    }
 
     function updateSpeaker(speaker) {
       this.speaker = speaker;
       this.click = true;
       this.viewLocation = $location.path();
-    };
+    }
 
     function isClick() {
       var active = (this.viewLocation === $location.path());
@@ -58,6 +58,6 @@
 
     function closeWindow() {
       this.click = false; 
-    };
+    }
   }
 })();

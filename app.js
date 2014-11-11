@@ -4,9 +4,9 @@
   var angular = require('angular');
   require('angular-route');
 
-  var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare'])
-                  .config(configure)
-                  .run(init);
+  angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare'])
+                .config(configure)
+                .run(init);
 
   require('./assets/js/directive/nav_menu');
   require('./assets/js/directive/share_menu');

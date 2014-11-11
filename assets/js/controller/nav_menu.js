@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  module.exports =  function navMenuController($scope, $location, $anchorScroll) {
+  module.exports =  function navMenuController($scope, $location) {
     
     this.index = 0;
     this.images = [{
