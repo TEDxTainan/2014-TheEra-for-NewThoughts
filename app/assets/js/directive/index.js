@@ -5,6 +5,6 @@
   
   app.directive('navMenu', require('./nav_menu'))
   app.directive('shareMenu', require('./share_menu'))
-  app.directive('countDown', require('./count_down'));
+  //app.directive('countDown', require('./count_down'));
 
 })();
