@@ -343,20 +343,10 @@ nav-menu{
 
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
-    #section1{
-        background-position-y: 280px;
-    }
-   /* .countdown{
-       left: 19%;
-    }*/
-    #section1 .content .logo {
-        width: 50%;
-        left: 24%;
-    }
 }
 @media screen and (max-width: 640px) and (min-width: 100px){
-    #section1{
-        background-position-y: 300px;
+    .section {
+        background-position-y: 85%;
     }
     #section2{
         font-size: 12px;
@@ -421,7 +411,7 @@ nav-menu{
     }
     .speaker-content{
         max-height: 300px;
-        top: 55px;
+        margin-top: 15px;
         .speaker-img{
             display: none;
 
