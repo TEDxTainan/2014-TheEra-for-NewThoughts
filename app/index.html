@@ -1,158 +1,189 @@
-<?php
-/*
-Template Name: 2014 The Era for New Thoughts
- */
-?>
+<?php /* Template Name: 2014 The Era for New Thoughts */ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang='zh-TW' ng-app="event">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content=""/>
-    <meta property="og:title" content="TEDxTainan The Era for New Thoughts 2014"/>
-    <meta property="og:site_name" content="TEDxTainan The Era for New Thoughts 2014"/>
-    <meta property="og:type" content="website"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="TEDxTainan 2014 匯流改變的力量 激盪思辨的浪潮, TEDxTainan每年透過舉辦年會，提供一個具有影響力的舞台，邀請各個領域的創新者、改革者、領導者與夢想家，向世界分享他們的熱情與理想。以十八分鐘演講的形式，講述知識與概念的精隨。" />
+    <meta property="og:title" content="TEDxTainan The Era for New Thoughts 2014" />
+    <meta property="og:site_name" content="TEDxTainan The Era for New Thoughts 2014" />
+    <meta property="og:type" content="website">
+    <meta content="http://www.tedxtainan.com/app/assets/img/background.jpg" property="og:image">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TEDxTainan The Era for New Thoughts 2014</title>
-    <base href="/app/"> 
+    <base href="/app/">
     <link rel="stylesheet" type="text/css" href="vendors/full_page/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/new.thoughts.css" />
     <link rel="shortcut icon" href="http://tedxtainancom.ipage.com/wordpress/wp-content/uploads/2013/10/favicon4.ico" type="image/x-icon">
-    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-        <!--[if IE]>
+    <link href="assets/img/background.jpg" rel="image_src" type="image/jpeg">
+    <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!--[if IE]>
     <script type="text/javascript">
     var console = { log: function() {} };
     </script>
     <![endif]-->
-   </head>
-   <body>
-     <header>
-      <div ng-controller="MenuController as menu">
-        <div class="menu-icon">
-          <img ng-click="toggleImg()" ng-src="{{image.svg}}" />
-        </div>
-        <ul id="menu" ng-class="{ active: isSelect() }" >
-          <li data-menuanchor="firstPage" ng-class="{ active: isAnchor(2)}">
-            <a href="#firstPage" ng-mouseover="gotoAnchor(2)">新思潮 簡介</a>
-          </li>
-          <li data-menuanchor="secondPage" ng-class="{ active: isAnchor(3)}">
-            <a href="#secondPage" ng-mouseover="gotoAnchor(3)">新潮湧起 , 創新</a>
-          </li>
-          <li data-menuanchor="3rdPage" ng-class="{ active: isAnchor(4) }">
-            <a href="#3rdPage" ng-mouseover="gotoAnchor(4)">草根演繹 , 改變</a>
-          </li>
-          <li data-menuanchor="4thPage" ng-class="{ active: isAnchor(5) }">
-            <a href="#4thPage" ng-mouseover="gotoAnchor(5)">跨越破碎 , 前行</a>
-          </li>
-          <li data-menuanchor="lastPage" ng-class="{ active: isAnchor(6) }">
-            <a href="#lastPage" ng-mouseover="gotoAnchor(6)">如何參加新思潮</a>
-          </li>
-        </ul>
-        </div>
-      <div ng-controller="ShareController as share">
-      <div class="share" ng-show="!isOpen">
-        <img ng-click="toggle()" ng-src="{{image.svg}}">
-      </div>
-      <ul id="share_menu" ng-class="{ active: isOpen }">
-         
-        <li>
-        <a facebook class="facebookShare" data-url='http://google.com' data-shares='shares'>
-          <img class="social_icon" src="assets/img/Facebook.svg"/>
-        </a>
-        </li>
-        <li>
-        <a twitter  data-lang="en" data-count='horizontal' data-url='http://google.com' data-via='notsosleepy' data-size="medium" data-text='Testing Twitter Share' >
-          <img class="social_icon" src="assets/img/Twitter.svg"/>
-        </a>
-        </li>
-        <li>
-        <a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,
-          '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-          <img class="social_icon" src="assets/img/GooglePlus.svg"/>
-        </a>
-        </li>
-        <li>
-          <img class="social_icon" src="assets/img/Pinterest.svg"/>
-        <div pintrest data-href='http://google.com' data-description='testing share' data-img='http://plnkr.co/img/plunker.png' data-pin-do='buttonPin' data-pin-config='beside'></div>
-        </li>
-        <li><a ng-click="toggle()">
-          <img class="social_icon" src="assets/img/clickbutton.svg"/>
-        </a>
-        </li>
-      </ul>
+    <style>
+    .section {
+        background-image: url("assets/img/background.jpg");
+    }
+    </style>
+</head>
+
+<body ng-controller="ThemeController as theme">
+    <header>
+        <nav-menu></nav-menu>
+        <share-menu></share-menu>
     </header>
-        <div id="fullpage">
-          <section class="section" id="section1">
+    <div id="fullpage">
+
+        <section class="section" id="section1">
             <div class="content" id="main">
-              <img class="logo" src="assets/img/logo.svg"/>
-                <h1>匯流改變的力量 激盪思辨的浪潮</h1>
-                <div class="countdown"><span class="time">DAYS</span><span id="day">    </span>
-                  <span class="time">HOURS</span><span id="hour">    </span><span class="time">MINUTES</span><span id="min">    </span><span class="time">SECONDS</span><span id="sec">    </span></div>
-              <img class="tedxtainan" src="assets/img/white.png"/>
+                <img class="logo" src="assets/img/logo.png" />
+                <h1></h1>
+                <a href="http://www.accupass.com/go/tedxtainan2014" class="myButton">購票</a>
             </div>
-            </section>
-           <section class="section" id="section2">
-            </section>
-            <section class="section" id="section3" ng-controller="ThemeController as theme">
-                <div ng-repeat="speaker in theme.speakers" class="speaker_thumb">
-                  <img ng-src="{{speaker.image.thumb}}"/>
+        </section>
+
+        <section class="section" id="section2">
+            <div class="content">
+                <img class="logo" src="assets/img/logo.svg" />
+                <div class="title">
+                    <p>新思潮 The Era for New Thoughts
+                        <br>「匯流改變的力量，激盪思辨的浪潮」
+                    </p>
                 </div>
-             </section>
-             <section class="section" id="section4" ng-controller="ThemeController as theme">
-                <div ng-repeat="speaker in theme.speakers" class="speaker_thumb">
-                  <img ng-src="{{speaker.image.thumb}}"/>
+                <p>這一年，台灣發生了許多事。<p/>
+                <p>
+                    而時代的洪流將每個人身不由己地捲了進去。
+                    <br/>我們可以選擇掙扎，或者任自漂流。
+                    <br/>但願我們夠有勇氣，就能乘著這股洪流，卷起一道激浪。
+                    <br/>在台灣，還有許多創新者、改革者、夢想家，用著自己的熱情與理想，努力將洪流導向一個更美好的未來。
+                </p>
+                <p>
+                    有人試著從荒蕪之中找尋一線生機，試著破土而新生。
+                    <br/>有人默默耕耘著台南這片文化沃土，保存深厚的底蘊。
+                    <br/>有人則在哀慟的破碎中徒步前行著，傳播重生的希望。
+                </p>
+                <p>
+                    TEDxTainan與你跨越過去的徬徨與傷痛，著手解決眼前的問題，開拓新的格局，屬於我們的世代！
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="section3">
+            <div class="content">
+                <div class="about_theme" ng-hide="theme.isClick()">
+                    <div class="title">
+                        <img src="assets/img/theme1-2.png"></img>
+                    </div>
+                    <p>
+                        這是一波不斷推進的城市浪潮，也是一群浪頭先鋒者，帶著堅毅的態度，勇敢衝撞現狀。先鋒開拓格局，讓我們得以最遼闊的視野，感受能量的衝擊與創造的脈動。
+                    </p>
                 </div>
-                </section>
-             <section class="section" id="section5" ng-controller="ThemeController as theme">
-                <div ng-repeat="speaker in theme.speakers" class="speaker_thumb">
-                  <img ng-src="{{speaker.image.thumb}}"/>
+
+                <div ng-show="theme.isClick()" class="speaker-content">
+                    <span class="speaker-img">
+                        {{theme.speaker.image.full}}
+                    </span>
+                    <span class="speaker-brief">
+                        <p>
+                            <h2>{{ theme.speaker.name }}</h2>
+                        </p>
+                        <p>{{ theme.speaker.brief }}</p>
+                    </span>
+                    <div class="close-button" ng-click="theme.closeWindow()">
+                        <img src="assets/img/close.svg"></img>
+                    </div>
                 </div>
-             </section>
-             <section class="section" id="section6">
-             </section>
+
+            </div>
+        </section>
+
+        <section class="section" id="section4">
+            <div class="content">
+                <div class="about_theme" ng-hide="theme.isClick()">
+                    <div class="title">
+                        <img src="assets/img/theme2-2.png"></img>
+                    </div>
+                    <p>
+                        在府城有一群草根默默深植，讓我們開始學會溫厚與踏實。在不斷的累積後，台南人沈澱了深厚的文化底藴，並在看似平凡的生活中，看見曙光，然後邁向期待。
+                    </p>
+                </div>
+
+                <div ng-show="theme.isClick()" class="speaker-content">
+                    <span class="speaker-img">
+                        {{theme.speaker.image.full}}
+                    </span>
+                    <span class="speaker-brief">
+                        <p>
+                            {{theme.speaker.brief}}
+                        </p>
+                    </span>
+                    <div class="close-button" ng-click="theme.closeWindow()">
+                        <img src="assets/img/close.svg"></img>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section" id="section5">
+            <div class="content">
+                <div class="about_theme" ng-hide="theme.isClick()">
+                    <div class="title">
+                        <img src="assets/img/theme3-2.png"></img>
+                    </div>
+                    <p>
+                        動盪的時代，總是充斥瘡疤。這些接踵而至的事件，帶來哀慟的破碎。卻總有一群可貴的社會力量，腳踩瓦礫堆，用行動帶領我們跨越、看見裂縫外的暖陽。
+                    </p>
+                </div>
+
+                <div ng-show="theme.isClick()" class="speaker-content">
+                    <span class="speaker-img">
+                        {{theme.speaker.image.full}}
+                    </span>
+                    <span class="speaker-brief">
+                        <p>
+                            {{theme.speaker.brief}}
+                        </p>
+                    </span>
+                    <div class="close-button" ng-click="theme.closeWindow()">
+                        <img src="assets/img/close.svg"></img>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section" id="section6">
+        </section>
+    </div>
+
+    <div class="bottom" ng-class="{ active: theme.isSubtheme()}">
+        <div ng-repeat="speaker in theme.getSpeakers()" class="speaker_thumb" ng-show="theme.isSubtheme()">
+            <img ng-src="{{speaker.image.thumb}}" ng-click="theme.updateSpeaker(speaker)" />
         </div>
-        <footer>
-        </footer>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-     <script src="vendors/jquery/jquery.timers.js"></script>
-    <script type="text/javascript">
-      var startDate = new Date();
-      var endDate = new Date('2014/11/08 21:00');
-      var spantime = (endDate - startDate)/1000;
-       $(document).ready(function () {
-              $(this).everyTime('1s', function(i) {
-                  spantime --;
-                   var d = Math.floor(spantime / (24 * 3600)).toString();
-                   var h = Math.floor((spantime % (24*3600))/3600).toString();
-                   var m = Math.floor((spantime % 3600)/(60)).toString();
-                   var s = Math.floor(spantime%60).toString();
-       
-                   if(spantime>0){
-                      console.log(d);
-                      d = d.length == 1 ? '0' + d : d; 
-                      h = h.length == 1 ? '0' + h : h; 
-                      m = m.length == 1 ? '0' + m : m; 
-                      s = s.length == 1 ? '0' + s : s; 
-                      $("#day").text(d);
-                      $("#hour").text(h);
-                      $("#min").text(m);
-                      $("#sec").text(s);
-                   }else{ // 避免倒數變成負的
-                      $("#day").text(0);
-                      $("#hour").text(0);
-                      $("#min").text(0);
-                      $("#sec").text(0);
-                   }
-               });
-         });
-      </script>
-    <script type="text/javascript" src="vendors/full_page/jquery.fullPage.js"></script>
+        <img class="tedxtainan" src="assets/img/white.png" />
+    </div>
+    
+    <footer>
+    </footer>
+
+    <div id="fb-root"></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="vendors/full_page/jquery.fullPage.min.js"></script>
     <script type="text/javascript" src="assets/js/new.thoughts.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js"></script>-->
+    <script type="text/javascript" src="bundle.js"></script>
     <script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
-    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="//platform.twitter.com/widgets.js"></script>
     <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-  </body>
+    <script src="vendors/jquery/jquery.timers.js"></script>
+    <script src="assets/js/countdown.js"></script>
+
+</body>
+
 </html>
