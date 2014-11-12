@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  module.exports =  function($scope, $location, $anchorScroll) {
+  module.exports =  function navMenuController($scope, $location) {
     
     this.index = 0;
     this.images = [{
@@ -16,8 +16,14 @@
     }];
     this.image = this.images[0];
 
-    this.toggleImg = function() {
-      if(this.isHome()){
+    this.toggleImg = toggleImg;
+    this.isSelect = isSelect;
+    this.gotoAnchor = gotoAnchor;
+    this.isAnchor = isAnchor;
+    this.isHome = isHome;
+
+    function toggleImg() {
+      if(this.isHome()) {
         this.index = this.index == 1 ? 0 : 1;
         this.image = this.images[this.index];
       }
@@ -25,33 +31,33 @@
         this.gotoAnchor(1);
         this.image = this.images[2];
       }
-    };
+    }
 
-    this.isSelect = function() {
-      return (this.image === this.images[1]) || (this.image === 
-        this.images[2]);
-    };
+    function isSelect() {
+      return (this.image === this.images[1]) || 
+             (this.image === this.images[2]);
+    }
 
-    this.gotoAnchor = function(x) {
+    function gotoAnchor(x) {
       if (x != 1) {
         this.image = this.images[2];
       }
       $.fn.fullpage.moveTo(x);
-    };
+    }
 
-    this.isAnchor = function(viewLocation) {
+    function isAnchor(viewLocation) {
       var active = (viewLocation === $location.path());
       return active;
     }
 
-    this.isHome = function() {
+    function isHome() {
       var pos = $location.path();
       var result = pos === "" || pos === "/home";
       if(!result && this.image != this.images[1]){
         this.image = this.images[1];
       }
       return  result;
-    };
-  }
+    }
+  };
 
 })();

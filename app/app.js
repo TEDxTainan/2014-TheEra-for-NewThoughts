@@ -4,19 +4,23 @@
   var angular = require('angular');
   require('angular-route');
 
+  angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare'])
+                .config(configure)
+                .run(init);
 
-  var app = angular.module('event', ['ngRoute', 'djds4rce.angular-socialshare']);
+  require('./assets/js/directive/nav_menu');
+  require('./assets/js/directive/share_menu');
+  require('./assets/js/controller/theme');
 
-  require('./assets/js/directive');
-  require('./assets/js/controller');
+  init.$inject = ['$location', '$FB'];
 
-  app.config(['$routeProvider', '$locationProvider', 
-      function AppConfig($routeProvider, $locationProvider) {
-  }]);
+  function configure() {
 
-  app.run(function($location, $FB){
+  }
+
+  function init($location, $FB) {
     $location.url('home');
     $FB.init('164546407087109');
-  });
+  }
 
 })();

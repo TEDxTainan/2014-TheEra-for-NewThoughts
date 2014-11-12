@@ -21,6 +21,8 @@ nav-menu{
 .menu-icon{
     img{
         position: fixed;
+        width: 3.2em;
+        height: 3.2em;
     }
     a img{
         left: 100px;
@@ -55,6 +57,77 @@ ul#menu.active{
 #ticket{
     padding-right: 5px;
 }
+
+.share{
+    height: 45px;
+    width: 45px;
+}
+
+.social_icon{
+    height: 60px;
+    width: 60px;
+}
+
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../img/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 4.4631em 31.5em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../img/sprite.png");
+}
+
+.Facebook:before {
+    background-position: 0em 0em;
+    width: 4.4631em;
+    height: 4.4631em;
+}
+
+.GooglePlus:before {
+    background-position: 0em -4.5em;
+    width: 4.4631em;
+    height: 4.4631em;
+}
+
+.Pinterest:before {
+    background-position: 0em -9em;
+    width: 4.4631em;
+    height: 4.4631em;
+}
+
+.Twitter:before {
+    background-position: 0em -13.5em;
+    width: 4.4631em;
+    height: 4.4631em;
+}
+
+.clickbutton:before {
+    background-position: 0em -18em;
+    width: 4.463em;
+    height: 4.4631em;
+}
+
+.close:before {
+    background-position: 0em -22.5em;
+    width: 4.4631em;
+    height: 4.4631em;
+}
+
+.unclickbutton:before {
+    background-position: 0em -27em;
+    width: 4.4631em;
+    height: 4.4631em;
+}
+
+
 
 .share, #share_menu{
     position: fixed;
@@ -343,10 +416,20 @@ nav-menu{
 
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
+    #section1{
+        background-position-y: 280px;
+    }
+   /* .countdown{
+       left: 19%;
+    }*/
+    #section1 .content .logo {
+        width: 50%;
+        left: 24%;
+    }
 }
 @media screen and (max-width: 640px) and (min-width: 100px){
-    .section {
-        background-position-y: 85%;
+    #section1{
+        background-position-y: 300px;
     }
     #section2{
         font-size: 12px;
@@ -411,7 +494,7 @@ nav-menu{
     }
     .speaker-content{
         max-height: 300px;
-        margin-top: 15px;
+        top: 55px;
         .speaker-img{
             display: none;
 
