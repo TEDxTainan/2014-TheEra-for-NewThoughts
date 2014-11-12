@@ -13,9 +13,10 @@
 
     this.image = this.images[0];
     this.isOpen = false;
-    this.toggle = toogle;
+    this.toggle = toggle;
 
-    function toogle() {
+    function toggle() {
+      console.log(22);
       this.isOpen = this.isOpen ? false : true;
     }
   }
