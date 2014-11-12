@@ -17,7 +17,9 @@ nav-menu {
   z-index: 99; }
 
 .menu-icon img {
-  position: fixed; }
+  position: fixed;
+  width: 52px;
+  height: 52px; }
 .menu-icon a img {
   left: 100px; }
 
@@ -45,15 +47,71 @@ ul#menu.active {
 #ticket {
   padding-right: 5px; }
 
+.share {
+  height: 45px;
+  width: 45px; }
+
+.social_icon {
+  height: 60px;
+  width: 60px; }
+
+.icon {
+  font-size: 10px; }
+
+.icon:before {
+  content: ' ';
+  vertical-align: middle;
+  display: inline-block;
+  background-image: url("../img/sprite.svg");
+  background-repeat: no-repeat;
+  background-size: 4.4631em 31.5em; }
+
+.no-svg .icon:before {
+  background-image: url("../img/sprite.png"); }
+
+.Facebook:before {
+  background-position: 0em 0em;
+  width: 4.4631em;
+  height: 4.4631em; }
+
+.GooglePlus:before {
+  background-position: 0em -4.5em;
+  width: 4.4631em;
+  height: 4.4631em; }
+
+.Pinterest:before {
+  background-position: 0em -9em;
+  width: 4.4631em;
+  height: 4.4631em; }
+
+.Twitter:before {
+  background-position: 0em -13.5em;
+  width: 4.4631em;
+  height: 4.4631em; }
+
+.clickbutton:before {
+  background-position: 0em -18em;
+  width: 4.463em;
+  height: 4.4631em; }
+
+.close:before {
+  background-position: 0em -22.5em;
+  width: 4.4631em;
+  height: 4.4631em; }
+
+.unclickbutton:before {
+  background-position: 0em -27em;
+  width: 4.4631em;
+  height: 4.4631em; }
+
 .share, #share_menu {
   position: fixed;
   float: right;
-  right: 6%;
   top: 4%;
   bottom: -5px;
   width: 20px;
   z-index: 99;
-  right: 4%; }
+  right: 57px; }
 
 #share_menu {
   display: none;
