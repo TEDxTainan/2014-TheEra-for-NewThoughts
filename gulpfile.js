@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var svgSprite = require("gulp-svg-sprites");
 var csso = require('gulp-csso');
 var minifyHTML = require('gulp-minify-html');
 var sass = require('gulp-ruby-sass');
@@ -59,4 +60,11 @@ gulp.task('browser-sync', function() {
             baseDir: "./"
         }
     });
+});
+
+
+gulp.task('sprites', function () {
+    return gulp.src('app/assets/svg/*.svg')
+        .pipe(svgSprite())
+        .pipe(gulp.dest("svg"));
 });
