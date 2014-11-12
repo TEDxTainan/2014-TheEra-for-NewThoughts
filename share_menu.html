@@ -1,30 +1,30 @@
-<div class="share" ng-show="!share.isOpen">
-  <img ng-click="share.toggle()" ng-src="{{share.image.svg}}">
+<div class="share" ng-show="!share.isOpen" >
+  <i class="icon unclickbutton" ng-click="share.toggle()"></i>
 </div>
 <ul id="share_menu" ng-class="{ active: share.isOpen }">
-   
   <li>
   <a facebook class="facebookShare" data-url='http://www.tedxtainan.com/the-era-new-thoughts-2014/' data-shares='shares'>
-    <img class="social_icon" src="assets/img/Facebook.svg"/>
+    <div class="social_icon fb"><i class="icon Facebook"></i></div>
   </a>
   </li>
   <li>
+
   <a twitter  data-lang="en" data-count='horizontal' data-url='https://www.tedxtainan.com/the-era-new-thoughts-2014/' data-via='notsosleepy' data-size="medium" data-text='Testing Twitter Share' >
-    <img class="social_icon" src="assets/img/Twitter.svg"/>
+    <div class="social_icon twitter"><i class="icon Twitter"></i></div>
   </a>
   </li>
   <li>
   <a href="https://plus.google.com/share?url=https://www.tedxtainan.com/the-era-new-thoughts-2014/" onclick="javascript:window.open(this.href,
     '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-    <img class="social_icon" src="assets/img/GooglePlus.svg"/>
+    <div class="social_icon google"><i class="icon GooglePlus"></i></div>
   </a>
   </li>
   <li>
-    <img class="social_icon" src="assets/img/Pinterest.svg"/>
+    <i class="icon Pinterest"></i>
   <div pintrest data-href='https://www.tedxtainan.com/the-era-new-thoughts-2014/' data-description='testing share'  data-pin-do='buttonPin' data-pin-config='beside'></div>
   </li>
   <li><a ng-click="share.toggle()">
-    <img class="social_icon" src="assets/img/clickbutton.svg"/>
+    <div class="social_icon"><i class="icon clickbutton"></i><div>
   </a>
   </li>
 </ul>
