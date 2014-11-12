@@ -373,12 +373,12 @@ nav-menu .myButton {
     background: #F2F2F2;
     font-size: 18px; }
     .speaker-content .speaker-brief p {
-      width: 80%;
+      width: 90%;
       margin: auto;
       top: 30px;
       position: relative; }
     .speaker-content .speaker-brief h2 {
-      padding-left: 50px;
+      padding-left: 25px;
       color: #7CC1C9;
       font-weight: 600; }
   .speaker-content .close-button {
