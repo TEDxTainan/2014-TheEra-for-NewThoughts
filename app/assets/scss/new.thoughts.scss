@@ -21,8 +21,8 @@ nav-menu{
 .menu-icon{
     img{
         position: fixed;
-        width: 3.2em;
-        height: 3.2em;
+        width: 52px;
+        height: 52px;
     }
     a img{
         left: 100px;
@@ -132,12 +132,11 @@ ul#menu.active{
 .share, #share_menu{
     position: fixed;
     float: right;
-    right: 6%;
     top: 4%;
     bottom: -5px;
     width: 20px;
     z-index: 99;
-    right: 4%;
+    right: 57px;
 }
 #share_menu{
     display: none;
