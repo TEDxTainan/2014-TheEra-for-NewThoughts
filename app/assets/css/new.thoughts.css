@@ -353,9 +353,9 @@ nav-menu .myButton {
   box-shadow: 0px 5px 5px rgba(126, 123, 123, 0.44);
   border: 1px solid #BBBABA;
   margin: auto;
-  left: 0px;
+  left: 10%;
   right: 0px;
-  height: 450px;
+  height: 500px;
   width: 60%;
   margin-top: -26px; }
   .speaker-content .speaker-img {
