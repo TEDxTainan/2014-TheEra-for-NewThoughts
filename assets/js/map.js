@@ -9,8 +9,8 @@ function initialize() {
             mapOptions);
 	//加入標示點(Marker)
 	var image = new google.maps.MarkerImage(
-            "images/black_160x65.png", //url
-            new google.maps.Size(160, 65) //size
+            "assets/img/map_marker.png", //url
+            new google.maps.Size(160, 55) //size
     );
         var marker = new google.maps.Marker({
                 position: latlng, //經緯度
