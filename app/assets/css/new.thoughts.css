@@ -466,5 +466,11 @@ nav-menu .myButton {
       max-height: 300px;
       overflow: auto;
       font-size: 14px; } }
+#map_canvas {
+  width: 70%;
+  height: 400px;
+  position: relative;
+  left: 20%;
+  top: -10em; }
 
 /*# sourceMappingURL=new.thoughts.css.map */
